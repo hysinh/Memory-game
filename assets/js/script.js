@@ -1,15 +1,8 @@
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
-
-
-
-// Updates player lives
-function updateLives() {
-    const playerLivesCount = document.getElementById('score');
-    let playerLives = 20;
-    playerLivesCount.innerHTML = playerLives;
-    console.log(playerLivesCount.innerHTML);
-}
+const playerLivesCount = document.getElementById('score');
+let playerLives = 6;
+playerLivesCount.innerHTML = playerLives;
 
 // The Data
 let cardData = [
@@ -27,7 +20,7 @@ let cardData = [
 function duplicateData() {
     let newData = cardData.concat(cardData);
     return newData;
-}
+};
 
 // randomizes the cards -- Randomize an array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleCards(array) {
@@ -75,27 +68,10 @@ function generateCards() {
         card.appendChild(front);
         card.appendChild(back);
         
-        //addEventListeners();
+        // Adds event listeners
         card.addEventListener('click', flipCards);
-
-        // this code is by developedbyed code from his tutorial
-        // card.addEventListener('click', (e) => {
-        //     console.log(e);
-        //     //Run our flip animation
-        //     card.classList.toggle('flipped');
-        //     checkCards(e);
-        // });
     }
 };
-
-// adds Event Listeners to the the cards - hmmm. couldn't get this to work
-function addEventListeners() {
-    let cards = document.querySelectorAll('.card');
-    for (let card of cards) {
-        card.addEventListener('click', flipCards);
-        console.log('i am in the addEventListeners function');
-    }
-}
 
 // flips the cards by adding .flip class
 function flipCards(event) {
@@ -107,8 +83,9 @@ function flipCards(event) {
 
     // checks to see if the cards match
     checkCards(event);
-}
+};
 
+// Checks if two cards match
 function checkCards(event) {
     const clickedCard = event.target;
     clickedCard.classList.add('flipped');
@@ -119,41 +96,66 @@ function checkCards(event) {
     // Comparing the two flipped cards
     if (flippedCards.length === 2) {
         if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
-            disableCards();
             console.log('match');
+            disableCards();
         } else {
             console.log('wrong');
             unflipCards();
-
+            updateLives();
         };
-
     }
-}
 
+    // Checks to see if you win
+    checkWinGame();
+};
+
+// Unflips the cards if they don't match
 function unflipCards(event) {
     const flippedCards = document.querySelectorAll('.flipped');
-    // unflips the cards
     for (let c of flippedCards) {
         c.classList.remove('flipped');
         setTimeout(() => c.classList.remove('toggleCard'), 1000);
     }
     console.log('i am unflipping the card');
-}
+};
 
+// Disables cards that match
 function disableCards() {
     const flippedCards = document.querySelectorAll('.flipped');
     for (let c of flippedCards) {
+        c.classList.remove('flipped');
         c.style.pointerEvents = 'none';
+    }
+};
+
+// Updates player lives
+function updateLives() {
+    console.log('inside updateLives function')
+    playerLives--;
+    setTimeout(() => playerLivesCount.innerText = playerLives, 1000);
+    console.log(`Player Tries left: ${playerLives}`);
+};
+
+
+// Checks if you won the game
+function checkWinGame() {
+    if (playerLivesCount === 0) {
+        console.log('You lost. New Game?');
+        setTimeout(() => restartGame(), 1000);
     }
 }
 
 function resetBoard() {
+    console.log('Inside the resetBoard function');
+    const deleteCards = document.querySelectorAll('.card');
+    deleteCards.remove();
 
 }
 
 function restartGame() {
-
+    console.log('inside the restartGame function');
+    resetBoard();
+    generateCards();
 }
 
 generateCards();
-updateLives();
