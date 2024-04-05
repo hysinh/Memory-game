@@ -102,15 +102,29 @@ function flipCards(event) {
     console.log(event);
 
     // flips the cards
-    this.classList.toggle('flipped');
+    this.classList.toggle('toggleCard');
     console.log('i am flipping the card');
 
-    //     checkCards(e);
+    // checks to see if the cards match
+    checkCards(event);
 }
 
-function checkCards() {
+function checkCards(event) {
+    const clickedCard = event.target;
+    clickedCard.classList.add('flipped');
+    const flippedCards = document.querySelectorAll('.flipped');
+    const toggleCards = document.querySelectorAll('.toggleCards');
+    console.log(clickedCard);
 
+    // Comparing the two flipped cards
+    if (flippedCards.length === 2) {
+        if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
+            console.log('match');
+        } else {
+            console.log('wrong');
+        };
 
+    }
 }
 
 function unflipCards() {
