@@ -15,6 +15,12 @@ let cardData = [
     { imgSrc: "assets/images/pinkfloyd.jpeg", name: "pink floyd" },
 ];
 
+// duplicates the data
+function duplicateData() {
+    let newData = cardData.concat(cardData);
+    return newData;
+}
+
 function shuffleCards() {
 
 }
