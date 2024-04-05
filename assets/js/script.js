@@ -1,10 +1,15 @@
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
-const playerLivesCount = document.getElementById('score');
-let playerLives = 20;
-playerLivesCount.innerHTML = playerLives;
-console.log(playerLivesCount.innerHTML);
 
+
+
+// Updates player lives
+function updateLives() {
+    const playerLivesCount = document.getElementById('score');
+    let playerLives = 20;
+    playerLivesCount.innerHTML = playerLives;
+    console.log(playerLivesCount.innerHTML);
+}
 
 // The Data
 let cardData = [
@@ -70,34 +75,41 @@ function generateCards() {
         card.appendChild(front);
         card.appendChild(back);
         
+        //addEventListeners();
+        card.addEventListener('click', flipCards);
+
         // this code is by developedbyed code from his tutorial
-        card.addEventListener('click', (e) => {
-            console.log(e);
-            //Run our flip animation
-            card.classList.toggle('flipped');
-            checkCards(e);
-        });
+        // card.addEventListener('click', (e) => {
+        //     console.log(e);
+        //     //Run our flip animation
+        //     card.classList.toggle('flipped');
+        //     checkCards(e);
+        // });
     }
 };
 
 // adds Event Listeners to the the cards - hmmm. couldn't get this to work
 function addEventListeners() {
-    let cards = document.querySelectorAll('.cardt');
+    let cards = document.querySelectorAll('.card');
     for (let card of cards) {
         card.addEventListener('click', flipCards);
-        console.log(card.onclick);
         console.log('i am in the addEventListeners function');
     }
 }
 
 // flips the cards by adding .flip class
-function flipCards() {
-    card.classList.toggle('back');
-    console.log('i am flipping the cards');
-    //checkCards();
+function flipCards(event) {
+    console.log(event);
+
+    // flips the cards
+    this.classList.toggle('flipped');
+    console.log('i am flipping the card');
+
+    //     checkCards(e);
 }
 
 function checkCards() {
+
 
 }
 
@@ -118,3 +130,4 @@ function restartGame() {
 }
 
 generateCards();
+updateLives();
