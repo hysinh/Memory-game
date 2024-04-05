@@ -1,3 +1,8 @@
+// Setting a couple of global variables
+const playerLivesCount = document.getElementById('score');
+let playerLives = 20;
+playerLivesCount.innerHTML = playerLives;
+
 function shuffleCards() {
 
 }
