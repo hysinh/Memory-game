@@ -68,31 +68,33 @@ function generateCards() {
         // Inserts the cards into the DOM
         section.appendChild(card);
         card.appendChild(front);
-        card.appendChild(back);        
+        card.appendChild(back);
+        
+        // this code is by developedbyed code from his tutorial
+        card.addEventListener("click", (e) => {
+            console.log(e);
+            //Run our flip animation
+            card.classList.toggle("toggleCard");
+            checkCards(e);
+        });
     }
-    console.log('adding event listeners now');
-    //addEventListeners();
-
 };
 
-// adds Event Listeners to the the cards
+// adds Event Listeners to the the cards - hmmm. couldn't get this to work
 function addEventListeners() {
-    let fronts = document.querySelectorAll('.front');
-    for (let front of fronts) {
-        front.addEventListener('click', flipCards);
-        console.log(front);
+    let cards = document.querySelectorAll('.cardt');
+    for (let card of cards) {
+        card.addEventListener('click', flipCards);
+        console.log(card.onclick);
+        console.log('i am in the addEventListeners function');
     }
 }
 
-generateCards();
-
-
-function addEventListeners() {
-
-}
-
+// flips the cards by adding .flip class
 function flipCards() {
-
+    card.classList.toggle('back');
+    console.log('i am flipping the cards');
+    //checkCards();
 }
 
 function checkCards() {
@@ -114,3 +116,5 @@ function resetBoard() {
 function restartGame() {
 
 }
+
+generateCards();

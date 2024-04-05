@@ -34,9 +34,8 @@ p {
 }
 
 .card {
-    width: 100%;
-    background-color: chartreuse;
     position: relative;
+    background-color: chartreuse;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 8px; 
 }
 
@@ -46,6 +45,11 @@ p {
     height: 100%;
     position: absolute;
     pointer-events: none;
+}
+
+.back {
+    background: aquamarine;
+    backface-visibility: hidden;
 }
 
 .button-container {
@@ -64,4 +68,9 @@ p {
     font-weight: 600;
     letter-spacing: 2px;
     font-size: medium;
+}
+
+.toggleCard {
+    backface-visibility: visible;
+    /* transform: rotateY(180deg);  part of flipping cards */
 }
