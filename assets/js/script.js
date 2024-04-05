@@ -21,6 +21,23 @@ function duplicateData() {
     return newData;
 }
 
+// randomizes the cards -- Randomize an array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffleCards(array) {
+    let currentIndex = array.length;
+     
+    // While there remain elements to shuffleassets.
+    while (currentIndex != 0) {
+      
+        // Pick a remaining element...
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+      
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+};
+
 function shuffleCards() {
 
 }
