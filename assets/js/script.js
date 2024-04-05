@@ -1,7 +1,10 @@
-// Setting a couple of global variables
+// Sets some global variables
+const section = document.querySelector('section');
 const playerLivesCount = document.getElementById('score');
 let playerLives = 20;
 playerLivesCount.innerHTML = playerLives;
+console.log(playerLivesCount.innerHTML);
+
 
 // The Data
 let cardData = [
@@ -36,15 +39,53 @@ function shuffleCards(array) {
         [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
+
+    return array; // return the array
 };
 
-function shuffleCards() {
-
-}
-
+// generates the cards and adds them to the DOM
 function generateCards() {
+    const fullDeck = duplicateData(cardData);
+    const shuffledDeck = shuffleCards(fullDeck);
+    console.log(shuffledDeck);
+    
+    // Creates the HTML for cards
+    for (let c of shuffledDeck) {
+        const card = document.createElement('div');
+        const front = document.createElement('img');
+        const back = document.createElement('div');
+        const url = c.imgSrc;
+        
+        // Sets the classes of the cards
+        card.setAttribute('class', 'card');
+        front.setAttribute('class', 'front');
+        back.setAttribute('class', 'back');
 
+        // Puts information onto the cards
+        front.src = url;
+        card.setAttribute('name', c.name);
+
+        // Inserts the cards into the DOM
+        section.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);        
+    }
+    console.log('adding event listeners now');
+    //addEventListeners();
+
+};
+
+// adds Event Listeners to the the cards
+function addEventListeners() {
+    let fronts = document.querySelectorAll('.front');
+    for (let front of fronts) {
+        front.addEventListener('click', flipCards);
+        console.log(front);
+    }
 }
+
+generateCards();
+
 
 function addEventListeners() {
 
