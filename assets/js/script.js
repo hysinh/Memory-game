@@ -71,10 +71,10 @@ function generateCards() {
         card.appendChild(back);
         
         // this code is by developedbyed code from his tutorial
-        card.addEventListener("click", (e) => {
+        card.addEventListener('click', (e) => {
             console.log(e);
             //Run our flip animation
-            card.classList.toggle("toggleCard");
+            card.classList.toggle('flipped');
             checkCards(e);
         });
     }

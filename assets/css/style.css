@@ -36,6 +36,8 @@ p {
 .card {
     position: relative;
     background-color: chartreuse;
+    transform-style: preserve-3d; /* part of 3D rotating cards */
+    transition: transform 1s; /* part of 3D rotating cards */
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 8px; 
 }
 
@@ -70,7 +72,10 @@ p {
     font-size: medium;
 }
 
-.toggleCard {
-    backface-visibility: visible;
-    /* transform: rotateY(180deg);  part of flipping cards */
+.card .front {
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg); /* part of flipping cards */
 }
