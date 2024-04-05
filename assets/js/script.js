@@ -119,20 +119,32 @@ function checkCards(event) {
     // Comparing the two flipped cards
     if (flippedCards.length === 2) {
         if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
+            disableCards();
             console.log('match');
         } else {
             console.log('wrong');
+            unflipCards();
+
         };
 
     }
 }
 
-function unflipCards() {
-
+function unflipCards(event) {
+    const flippedCards = document.querySelectorAll('.flipped');
+    // unflips the cards
+    for (let c of flippedCards) {
+        c.classList.remove('flipped');
+        setTimeout(() => c.classList.remove('toggleCard'), 1000);
+    }
+    console.log('i am unflipping the card');
 }
 
 function disableCards() {
-
+    const flippedCards = document.querySelectorAll('.flipped');
+    for (let c of flippedCards) {
+        c.style.pointerEvents = 'none';
+    }
 }
 
 function resetBoard() {
