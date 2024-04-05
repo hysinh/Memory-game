@@ -1,5 +1,5 @@
 // Sets some global variables
-const section = document.querySelector('section');
+const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
 let playerLives = 20;
 playerLivesCount.innerHTML = playerLives;
@@ -66,7 +66,7 @@ function generateCards() {
         card.setAttribute('name', c.name);
 
         // Inserts the cards into the DOM
-        section.appendChild(card);
+        cardContainer.appendChild(card);
         card.appendChild(front);
         card.appendChild(back);
         
