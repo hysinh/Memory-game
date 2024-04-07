@@ -1,7 +1,7 @@
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 6;
+let playerLives = 20;
 playerLivesCount.innerHTML = playerLives;
 
 // The Data
@@ -90,8 +90,9 @@ function checkCards(event) {
     const clickedCard = event.target;
     clickedCard.classList.add('flipped');
     const flippedCards = document.querySelectorAll('.flipped');
-    const toggleCards = document.querySelectorAll('.toggleCards');
-    console.log(clickedCard);
+    const toggleCards = document.querySelectorAll('.toggleCard');
+    //console.log(clickedCard);
+    console.log(`the toggleCards.length: ${toggleCards.length}`);
 
     // Comparing the two flipped cards
     if (flippedCards.length === 2) {
@@ -103,15 +104,22 @@ function checkCards(event) {
             unflipCards();
             updateLives();
         };
+    };
 
-        if (playerLives === 0) {
-            console.log('You lost. New Game?');
-            restart();
-        }
-    }
+    // checks to see if you lost
+    if (playerLives === 0) {
+        console.log('You lost. New Game?');
+        restart();
+    } else {
+        return;
+    };
 
-    // Checks to see if you win
-    checkWinGame();
+    // checks to see if you win
+    if (toggleCards.length === 16 ) {
+        console.log('You won! Play again?')
+        //restart('Congratulations! You win! Play again!');
+    };
+
 };
 
 // Unflips the cards if they don't match
@@ -155,14 +163,6 @@ function updateLives() {
 };
 
 
-// Checks if you won the game
-function checkWinGame(playerLives) {
-    if (playerLives === 0) {
-        console.log('You lost. New Game?');
-        setTimeout(() => restart(), 1000);
-    }
-};
-
 function resetBoard() {
     console.log('Inside the resetBoard function');
     const deleteCards = document.querySelectorAll('.card');
@@ -176,10 +176,12 @@ function resetBoard() {
 // Restarts the game
 function restart() {
     console.log('restarting the game');
-    playerLives = 6;
-    playerLivesCount.textContent = playerLives;
-    resetBoard();
-    generateCards();
+    setTimeout(() => {
+        resetBoard();
+        generateCards();
+        playerLives = 20;
+        playerLivesCount.textContent = playerLives;
+      }, "2000");
 };
 
 
