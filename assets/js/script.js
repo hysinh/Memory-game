@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 20;
+let playerLives = 4;
 playerLivesCount.innerHTML = playerLives;
 
 // The Data
@@ -165,7 +165,8 @@ function checkLose() {
         disableCards();
         setTimeout(() => {
             console.log('You lost. New Game?');
-            window.alert('You lost. New Game?');
+            openLoseModal();
+            // window.alert('You lost. New Game?');
             restart();
           }, "1000");
     } else {
@@ -173,6 +174,15 @@ function checkLose() {
     };
 };
 
+function openLoseModal() {
+    var modal = document.getElementById('loseModal');
+    modal.style.display = 'block';
+}
+
+function openWinModal() {
+    var modal = document.getElementById('winModal');
+    modal.style.display = 'block';
+}
 
 function resetBoard() {
     console.log('Resetting the Board');
@@ -194,4 +204,5 @@ function restart() {
     //     playerLivesCount.textContent = playerLives;
     //   }, "2000");
 };
+
 
