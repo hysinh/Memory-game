@@ -16,20 +16,30 @@
     <h1>Memory Game</h1>
     <div>
         <p>Test your memory! Find the matching cards!</p>
-        <p><span>Number of tries left: </span><span id="score">20</span></p>
+        <p><span class="number-tries">Number of tries left: <span id="score">20</span></span></p>
         <div class="button-container">
             <!--<div class="button">easy</div> -->
             <div id="button" class="button">play game</div>
             <!-- <div class="button">hard</div> -->    
         </div>
 
-        <!-- The Modal -->
+        <!-- The Lose Message Modal -->
         <div id="loseModal" class="modal">
 
             <!-- Modal content -->
             <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Sorry! You lose. Play again!</p>
+            <p>Sorry! You lose. Play again?</p>
+            </div>
+        </div>
+
+         <!-- The Win Message Modal -->
+         <div id="winModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>You won! Play again?</p>
             </div>
         </div>
     <section id="card-container" class="card-container">

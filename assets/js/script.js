@@ -1,6 +1,5 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
-
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById('button');
     button.addEventListener('click', restart);
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 4;
+let playerLives = 20;
 playerLivesCount.innerHTML = playerLives;
 
 // The Data
@@ -156,9 +155,11 @@ function checkWin() {
     if (toggleCards.length === 16 ) {
         unflipCards();
         console.log('You won! Play again?');
-        window.alert('You won! Play again?');
-        restart();
-        //restart('Congratulations! You win! Play again!');
+        setTimeout(() => {
+            console.log('You won! Play again?');
+            openWinModal();
+            restart();
+          }, "500");
     } else {
         return;
     };
@@ -169,7 +170,7 @@ function checkLose() {
     if (playerLives === 0) {
         disableCards();
         setTimeout(() => {
-            console.log('You lost. Click on the button to play again');
+            console.log('You lost. New Game?');
             openLoseModal();
             // window.alert('You lost. New Game?');
             restart();
@@ -185,16 +186,18 @@ function openLoseModal() {
     modal.style.display = 'block';
 }
 
-// Closes the Modal message
-function closeModal() {
-    var modal = document.getElementById(`loseModal`)
-    modal.style.display = "none";
-}
-
 // Opens Win Modal message when you lose
 function openWinModal() {
     var modal = document.getElementById('winModal');
     modal.style.display = 'block';
+}
+
+// Closes the Modal message
+function closeModal() {
+    var loseModal = document.getElementById(`loseModal`);
+    var winModal = document.getElementById('winModal');
+    loseModal.style.display = 'none';
+    winModal.style.display = 'none';
 }
 
 // Resets the board
@@ -216,7 +219,7 @@ function restart() {
     console.log('restarting the game');
     resetBoard();
     generateCards();
-    playerLives = 4;
+    playerLives = 20;
     playerLivesCount.textContent = playerLives;
     resetButton();
 };
