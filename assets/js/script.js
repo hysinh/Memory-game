@@ -4,6 +4,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     let button = document.getElementById('button');
     button.addEventListener('click', restart);
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", closeModal);
+
 });
 
 // Sets some global variables
@@ -166,32 +170,41 @@ function checkLose() {
         disableCards();
         setTimeout(() => {
             console.log('You lost. Click on the button to play again');
-            // openLoseModal();
-            window.alert('You lost. New Game?');
-            resetBoard();
-            // restart();
+            openLoseModal();
+            // window.alert('You lost. New Game?');
+            restart();
           }, "500");
     } else {
         return;
     };
 };
 
-// function openLoseModal() {
-//     var modal = document.getElementById('loseModal');
-//     modal.style.display = 'block';
-// }
+// Opens Lose Modal message when you lose
+function openLoseModal() {
+    var modal = document.getElementById('loseModal');
+    modal.style.display = 'block';
+}
 
-// function openWinModal() {
-//     var modal = document.getElementById('winModal');
-//     modal.style.display = 'block';
-// }
+// Closes the Modal message
+function closeModal() {
+    var modal = document.getElementById(`loseModal`)
+    modal.style.display = "none";
+}
 
+// Opens Win Modal message when you lose
+function openWinModal() {
+    var modal = document.getElementById('winModal');
+    modal.style.display = 'block';
+}
+
+// Resets the board
 function resetBoard() {
     console.log('Resetting the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
 };
 
+// Updates the button text after game starts
 function resetButton() {
     console.log('This resets the start game button');
     let button = document.getElementById('button');
@@ -206,12 +219,6 @@ function restart() {
     playerLives = 4;
     playerLivesCount.textContent = playerLives;
     resetButton();
-    // setTimeout(() => {
-    //     resetBoard();
-    //     generateCards();
-    //     playerLives = 20;
-    //     playerLivesCount.textContent = playerLives;
-    //   }, "2000");
 };
 
 
