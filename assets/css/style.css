@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    background: url(/assets/images/game_background.webp) no-repeat center center;
+    background: url(assets/images/game_background.webp) no-repeat center center;
     background-color: #80bc44;
     font-family: "Poppins", sans-serif;
     color: white;
