@@ -161,7 +161,6 @@ function checkWin() {
 // checks to see if you lost
 function checkLose() {
     if (playerLives === 0) {
-        unflipCards();
         disableCards();
         setTimeout(() => {
             console.log('You lost. New Game?');
@@ -178,21 +177,21 @@ function resetBoard() {
     console.log('Resetting the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
-    // setTimeout(() => {
-    //     const deleteCards = document.querySelectorAll('.card');
-    //     deleteCards.forEach(c => c.remove()); // code from jason smith
-    // }, 1000);
 };
 
 // Restarts the game
 function restart() {
     console.log('restarting the game');
-    setTimeout(() => {
-        resetBoard();
-        generateCards();
-        playerLives = 20;
-        playerLivesCount.textContent = playerLives;
-      }, "2000");
+    resetBoard();
+    generateCards();
+    playerLives = 4;
+    playerLivesCount.textContent = playerLives;
+    // setTimeout(() => {
+    //     resetBoard();
+    //     generateCards();
+    //     playerLives = 20;
+    //     playerLivesCount.textContent = playerLives;
+    //   }, "2000");
 };
 
 
