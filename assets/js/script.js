@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 4;
+let playerLives = 20;
 playerLivesCount.innerHTML = playerLives;
 
 // The Data
@@ -152,6 +152,7 @@ function checkWin() {
         unflipCards();
         console.log('You won! Play again?');
         window.alert('You won! Play again?');
+        restart();
         //restart('Congratulations! You win! Play again!');
     } else {
         return;
@@ -194,5 +195,3 @@ function restart() {
     //   }, "2000");
 };
 
-
-generateCards();
