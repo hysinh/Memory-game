@@ -1,7 +1,14 @@
+// Wait for the DOM to finish loading before running the game
+// Get the button elements and add event listeners to them
+
+document.addEventListener("DOMContentLoaded", function() {
+    generateCards();
+});
+
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 20;
+let playerLives = 4;
 playerLivesCount.innerHTML = playerLives;
 
 // The Data
@@ -99,28 +106,17 @@ function checkCards(event) {
         if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
             console.log('match');
             disableCards();
+            setTimeout(() => {checkWin()}, "500");
         } else {
             console.log('wrong');
             unflipCards();
             updateLives();
+            setTimeout(() => {checkLose()}, "1000");
         };
     };
 
-    // checks to see if you lost
-    if (playerLives === 0) {
-        console.log('You lost. New Game?');
-        restart();
-    } else {
-        return;
-    };
-
-    // checks to see if you win
-    if (toggleCards.length === 16 ) {
-        console.log('You won! Play again?')
-        //restart('Congratulations! You win! Play again!');
-    };
-
 };
+
 
 // Unflips the cards if they don't match
 function unflipCards(event) {
@@ -131,19 +127,6 @@ function unflipCards(event) {
     }
     console.log('i am unflipping the card');
 };
-
-// Unflips All the cards when lost
-// function unflipAll() {
-//     console.log('from inside the unflipAll funtion');
-//     const allCards = document.querySelectorAll('.toggleCard');
-//     console.log(allCards.length);
-//     for (let i = 0; i > allCards.length; i++) {
-//         c.classList.remove('flipped');
-//         c.classList.remove('toggleCard');
-//         //setTimeout(() => c.classList.remove('toggleCard'), 1000);
-//         console.log(c);
-//     };
-// }
 
 // Disables cards that match
 function disableCards() {
@@ -162,9 +145,37 @@ function updateLives() {
     console.log(`Player Tries left: ${playerLives}`);
 };
 
+// checks to see if you win
+function checkWin() {
+    const toggleCards = document.querySelectorAll('.toggleCard');
+    if (toggleCards.length === 16 ) {
+        unflipCards();
+        console.log('You won! Play again?');
+        window.alert('You won! Play again?');
+        //restart('Congratulations! You win! Play again!');
+    } else {
+        return;
+    };
+};
+
+// checks to see if you lost
+function checkLose() {
+    if (playerLives === 0) {
+        unflipCards();
+        disableCards();
+        setTimeout(() => {
+            console.log('You lost. New Game?');
+            window.alert('You lost. New Game?');
+            restart();
+          }, "1000");
+    } else {
+        return;
+    };
+};
+
 
 function resetBoard() {
-    console.log('Inside the resetBoard function');
+    console.log('Resetting the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
     // setTimeout(() => {
