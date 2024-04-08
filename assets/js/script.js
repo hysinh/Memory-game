@@ -2,7 +2,8 @@
 // Get the button elements and add event listeners to them
 
 document.addEventListener("DOMContentLoaded", function() {
-    generateCards();
+    let button = document.getElementById('button');
+    button.addEventListener('click', restart);
 });
 
 // Sets some global variables
@@ -164,30 +165,37 @@ function checkLose() {
     if (playerLives === 0) {
         disableCards();
         setTimeout(() => {
-            console.log('You lost. New Game?');
-            openLoseModal();
-            // window.alert('You lost. New Game?');
-            restart();
-          }, "1000");
+            console.log('You lost. Click on the button to play again');
+            // openLoseModal();
+            window.alert('You lost. New Game?');
+            resetBoard();
+            // restart();
+          }, "500");
     } else {
         return;
     };
 };
 
-function openLoseModal() {
-    var modal = document.getElementById('loseModal');
-    modal.style.display = 'block';
-}
+// function openLoseModal() {
+//     var modal = document.getElementById('loseModal');
+//     modal.style.display = 'block';
+// }
 
-function openWinModal() {
-    var modal = document.getElementById('winModal');
-    modal.style.display = 'block';
-}
+// function openWinModal() {
+//     var modal = document.getElementById('winModal');
+//     modal.style.display = 'block';
+// }
 
 function resetBoard() {
     console.log('Resetting the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
+};
+
+function resetButton() {
+    console.log('This resets the start game button');
+    let button = document.getElementById('button');
+    button.innerText = 'reset game';
 };
 
 // Restarts the game
@@ -197,6 +205,7 @@ function restart() {
     generateCards();
     playerLives = 4;
     playerLivesCount.textContent = playerLives;
+    resetButton();
     // setTimeout(() => {
     //     resetBoard();
     //     generateCards();

@@ -3,7 +3,9 @@
 * {
     min-width: 100mw;
     min-height: 100mh;
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -18,12 +20,17 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
     text-align: center;
+}
+
+a {
+    cursor: pointer;
 }
 
 /* Game grid */
@@ -62,8 +69,8 @@ p {
 }
 
 .button {
-    background-color: orangered;
-    margin: 5px;
+    background-color: orange;
+    margin: 1rem;
     padding: .5rem;
     width: 150px;
     color: #363636;
@@ -71,6 +78,7 @@ p {
     font-weight: 600;
     letter-spacing: 2px;
     font-size: medium;
+    cursor: pointer
 }
 
 .card .front {
@@ -83,8 +91,10 @@ p {
 
 /* Footer */
 footer {
-    padding: 0;
+    padding: 2rem 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 footer > ul {
@@ -94,7 +104,7 @@ footer > ul {
 
 footer li {
     float: left;
-    padding: 0 10px;
+    margin: 0 10px;
     font-size: 125%;
 }
 
