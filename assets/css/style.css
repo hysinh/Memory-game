@@ -150,28 +150,30 @@ footer p {
   }
 
 /* Media query for mobile devices and later (375px and up) */
-/* Game grid */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 4rem);
-    grid-template-rows: repeat(4, 4rem);
-    grid-gap: 5px;
+@media screen and (min-width: 375px) {
+    /* Game grid */
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 4.5rem);
+        grid-template-rows: repeat(4, 4.5rem);
+        grid-gap: 5px;
+    }
+
+
 }
 
 /* Media query for tablets and later (768px and up) */
-/* Game grid */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 6rem);
-    grid-template-rows: repeat(4, 6rem);
-    grid-gap: 10px;
-}
+@media screen and (min-width: 768px) {
+    /* Game grid */
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 6rem);
+        grid-template-rows: repeat(4, 6rem);
+        grid-gap: 10px;
+    }
 
-/* larger devices - laptops, desktops, and up (992px and up)  */
-/* Game grid 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 6rem);
-    grid-template-rows: repeat(4, 6rem);
-    grid-gap: 10px;
-}*/
+    /* Game grid */
+    .card-container {
+    width: 100%;
+}
+}
