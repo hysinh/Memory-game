@@ -153,9 +153,9 @@ footer p {
 /* Game grid */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, 6rem);
-    grid-template-rows: repeat(4, 6rem);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: repeat(4, 4rem);
+    grid-gap: 5px;
 }
 
 /* Media query for tablets and later (768px and up) */
@@ -168,10 +168,10 @@ footer p {
 }
 
 /* larger devices - laptops, desktops, and up (992px and up)  */
-/* Game grid */
+/* Game grid 
 .card-container {
     display: grid;
     grid-template-columns: repeat(4, 6rem);
     grid-template-rows: repeat(4, 6rem);
     grid-gap: 10px;
-}
+}*/
