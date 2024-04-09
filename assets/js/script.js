@@ -1,8 +1,10 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
-    let button = document.getElementById('button');
-    button.addEventListener('click', restart);
+    let startButton = document.getElementById('start-game-button');
+    let resetButton = document.getElementById('reset-button');
+    startButton.addEventListener('click', generateCards);
+    resetButton.addEventListener('click', restart);
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", closeModal);

@@ -22,17 +22,19 @@ body {
 
 header {
     height: 2rem;
-
     margin: 1rem 0 2rem;
+    text-align: center;
 }
 
 h1{
     font-family: "Lilita One", sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: orange;
     
 }
 
@@ -103,7 +105,8 @@ a {
     font-weight: 600;
     letter-spacing: 2px;
     font-size: medium;
-    cursor: pointer
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .card .front {
@@ -183,6 +186,10 @@ footer p {
 
 /* Media query for tablets and later (768px and up) */
 @media screen and (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
     /* Game grid */
     .card-container {
         display: grid;
