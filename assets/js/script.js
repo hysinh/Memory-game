@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let startButton = document.getElementById('start-game-button');
     let resetButton = document.getElementById('reset-button');
-    startButton.addEventListener('click', generateCards);
+    startButton.addEventListener('click', restart);
     resetButton.addEventListener('click', restart);
 
     // When the user clicks anywhere outside of the modal, close it
@@ -210,11 +210,11 @@ function resetBoard() {
 };
 
 // Updates the button text after game starts
-function resetButton() {
-    console.log('This resets the start game button');
-    let button = document.getElementById('button');
-    button.innerText = 'reset';
-};
+// function resetButton() {
+//     console.log('This resets the start game button');
+//     let button = document.getElementById('button');
+//     button.innerText = 'reset';
+// };
 
 // Restarts the game
 function restart() {
@@ -223,7 +223,7 @@ function restart() {
     generateCards();
     playerLives = 20;
     playerLivesCount.textContent = playerLives;
-    resetButton();
+    //resetButton();
 };
 
 
