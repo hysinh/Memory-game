@@ -13,12 +13,16 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon_16x16.png">
 </head>
 <body>
-    <h1>Memory Game</h1>
+    <header>
+        <h1>Happy Valley Friends</h1>
+    </header>
+    <h2>Memory Game</h1>
+    <div id="main-container">
         <p>Test your memory! Find all the matching pairs to win.</p>
         <p><span class="number-tries">Number of tries left: <span id="score">20</span></span></p>
         <div class="button-container">
-            <!--<div class="button">easy</div> -->
-            <div id="button" class="button">play game</div>
+            <div class="button">play</div>
+            <div id="button" class="button">reset</div>
             <!-- <div class="button">hard</div> -->    
         </div>
 
@@ -33,57 +37,57 @@
             </div>
         </div>
 
-         <!-- The Win Message Modal -->
-         <div id="winModal" class="modal">
+            <!-- The Win Message Modal -->
+            <div id="winModal" class="modal">
 
-            <!-- Modal content -->
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>You won! Play again?</p>
+                <!-- Modal content -->
+                <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>You won! Play again?</p>
+                </div>
             </div>
-        </div>
-        
-    <section id="card-container" class="card-container">
-    </section>
+            
+        <section id="card-container" class="card-container">
+        </section>
     
 
-    <footer>
-        <!--
-            <ul>
-            <li>
-                <a
-                href="http://www.facebook.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Opens Facebook in a new tab"
-                ><i class="fa-brands fa-facebook-f"></i>
-                </a>
-            </li>
-            <li>
-                <a
-                href="http://www.instagram.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Opens Instagram in a new tab"
-                ><i class="fa-brands fa-instagram"></i>
-                </a>
-            </li>
-            <li>
-                <a
-                href="http://www.tiktok.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Opens Tiktok in a new tab"
-                ><i class="fa-brands fa-tiktok"></i>
-                </a>
-            </li>
-            </ul>-->
-        <p>
-          <i class="fa-regular fa-copyright"></i> 2024. Fun Valley Friends Memory Game. 
-          All rights reserved.
-        </p>
-    </footer>
-    
+        <footer>
+            <!--
+                <ul>
+                <li>
+                    <a
+                    href="http://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Opens Facebook in a new tab"
+                    ><i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a
+                    href="http://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Opens Instagram in a new tab"
+                    ><i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a
+                    href="http://www.tiktok.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Opens Tiktok in a new tab"
+                    ><i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </li>
+                </ul>-->
+            <p>
+            <i class="fa-regular fa-copyright"></i> 2024. Fun Valley Friends Memory Game. 
+            All rights reserved.
+            </p>
+        </footer>
+    </div>
     <script
       src="https://kit.fontawesome.com/581121c7aa.js"
       crossorigin="anonymous"

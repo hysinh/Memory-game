@@ -211,7 +211,7 @@ function resetBoard() {
 function resetButton() {
     console.log('This resets the start game button');
     let button = document.getElementById('button');
-    button.innerText = 'reset game';
+    button.innerText = 'reset';
 };
 
 // Restarts the game
