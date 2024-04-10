@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 20;
+let playerLives = 4;
 playerLivesCount.innerHTML = playerLives;
 
 // The Data
@@ -221,7 +221,7 @@ function restart() {
     console.log('restarting the game');
     resetBoard();
     generateCards();
-    playerLives = 20;
+    playerLives = 4;
     playerLivesCount.textContent = playerLives;
     //resetButton();
 };

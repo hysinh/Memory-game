@@ -153,7 +153,7 @@ footer p {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
+    width: 90%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -197,6 +197,11 @@ footer p {
         grid-template-rows: repeat(4, 6rem);
         grid-gap: 10px;
     }
+
+    /* Modal Content/Box */
+    .modal-content {
+        width: 60%; /* Could be more or less, depending on screen size */
+    }
 }
 
 /* larger devices - laptops, desktops, and up (992px and up)  */
@@ -207,5 +212,10 @@ footer p {
         grid-template-columns: repeat(4, 7rem);
         grid-template-rows: repeat(4, 7rem);
         grid-gap: 10px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        width: 40%; /* Could be more or less, depending on screen size */
     }
 }
