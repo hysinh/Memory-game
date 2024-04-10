@@ -72,7 +72,7 @@ function generateCards() {
         
         // Adds event listeners
         card.addEventListener('click', flipCards);
-    }
+    };
 };
 
 // flips the cards by adding .active class
@@ -89,7 +89,7 @@ function flipCards(event) {
         checkCards(event);
     } else {
         return;
-    }
+    };
     
 };
 
@@ -98,7 +98,7 @@ function checkCards(event) {
     console.log('inside the checkCards function');
     const activeCards = document.querySelectorAll('.active');
     console.log(`Inside check cards - activeCards.length: ${activeCards.length}`)
-    //const toggleCards = document.querySelectorAll('.toggleCard');
+
     firstCard = activeCards[0];
     secondCard = activeCards[1];
 
@@ -129,21 +129,6 @@ function checkCards(event) {
     return;
 };
 
-    // Comparing the two flipped cards
-    // if (flippedCards.length === 2) {
-    //     if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
-    //         console.log('match');
-    //         disableCards();
-    //         setTimeout(() => {checkWin()}, "500");
-    //     } else {
-    //         console.log('wrong');
-    //         unflipCards();
-    //         updateLives();
-    //         setTimeout(() => {checkLose()}, "1000");
-    //     };
-    // };
-
-
 // Unflips the cards if they don't match
 function unflipCards(event) {
     const flippedCards = document.querySelectorAll('.active');
@@ -152,7 +137,7 @@ function unflipCards(event) {
         c.classList.remove('no-click');
         c.classList.remove('toggleCard');
         c.style.pointerEvents = 'all';
-    }
+    };
     console.log('i am unflipping the card');
 };
 
@@ -175,15 +160,14 @@ function updateLives() {
 
 // checks to see if you win
 function checkWin() {
-    const toggleCards = document.querySelectorAll('.toggleCard');
-    if (toggleCards.length === 16 ) {
-        //unflipCards();
+    const matchedCards = document.querySelectorAll('.matched');
+    if (matchedCards.length === 16 ) {
         console.log('You won! Play again?');
         setTimeout(() => {
             console.log('You won! Play again?');
             openWinModal();
             //restart();
-          }, "500");
+          }, 250);
     } else {
         return;
     };
@@ -192,13 +176,11 @@ function checkWin() {
 // checks to see if you lost
 function checkLose() {
     if (playerLives === 0) {
-        disableCards();
         setTimeout(() => {
             console.log('You lost. New Game?');
             openLoseModal();
             // window.alert('You lost. New Game?');
-            //restart();
-          }, "500");
+          }, 250);
     } else {
         return;
     };
@@ -231,13 +213,6 @@ function clearBoard() {
     deleteCards.forEach(c => c.remove()); // code from jason smith
 };
 
-// Updates the button text after game starts
-// function resetButton() {
-//     console.log('This resets the start game button');
-//     let button = document.getElementById('button');
-//     button.innerText = 'reset';
-// };
-
 // Restarts the game
 function startGame() {
     console.log('starting the game');
@@ -245,7 +220,7 @@ function startGame() {
     generateCards();
     playerLives = 20;
     playerLivesCount.textContent = playerLives;
-    //resetButton();
+
 };
 
 // Wait for the DOM to finish loading before running the game
