@@ -22,7 +22,7 @@ body {
 
 header {
     height: 2rem;
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 3rem;
     text-align: center;
 }
 
@@ -171,8 +171,6 @@ footer {
     flex-direction: column;
 }
 
-
-
 footer p {
     font-size: 60%;
     padding: 1rem 0 0;
@@ -181,6 +179,12 @@ footer p {
 
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px) {
+    /* General Styles */
+    header {
+        height: 1rem;
+        margin: 2rem 0;
+    }
+    
     /* Game grid */
     .card-container {
         display: grid;
@@ -188,7 +192,6 @@ footer p {
         grid-template-rows: repeat(4, 4.5rem);
         grid-gap: 5px;
     }
-
 
 }
 

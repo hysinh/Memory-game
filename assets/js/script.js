@@ -1,12 +1,16 @@
-// Sets some global variables
+/**
+ * Sets some global variables by getting elements from the DOM
+ */
 const cardContainer = document.querySelector('#card-container');
-const playerLivesCount = document.getElementById('score');
-let playerLives = 20;
-playerLivesCount.innerHTML = playerLives;
+const playerTriesCount = document.getElementById('score');
+let playerTries = 20;
+playerTriesCount.innerHTML = playerTries;
 
 let firstCard, secondCard;
 
-// The Data
+/**
+ * The Card Data set
+ */
 let cardData = [
     { imgSrc: "assets/images/card_happyvalley_egg.webp", name: "egg" }, 
     { imgSrc: "assets/images/card_happyvalley_grumpy.webp", name: "grumpy" },
@@ -18,13 +22,21 @@ let cardData = [
     { imgSrc: "assets/images/card_happyvalley_walter.webp", name: "walter" },
 ];
 
-// duplicates the data
+/**
+ * Duplicates the card data array
+ * @param {array} array of card data
+ */
 function duplicateData() {
     let newData = cardData.concat(cardData);
     return newData;
 };
 
-// randomizes the cards -- Randomize an array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+/**
+ * Randomizes the array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle
+ * Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+ * @param {*} array of card data
+ * @returns {array} Returns randomized array
+ */
 function shuffleCards(array) {
     let currentIndex = array.length;
      
@@ -43,7 +55,13 @@ function shuffleCards(array) {
     return array; // return the array
 };
 
-// generates the cards and adds them to the DOM
+/**
+ * Generates the card elements and adds them to the DOM.
+ * Pulls the initial data from the cardData and applies the
+ * duplicateData() and then shuffleDeck() to create a unique deck each time
+ * before populating the grid.
+ * Adds event listeners to the card div element.
+ */
 function generateCards() {
     const fullDeck = duplicateData(cardData);
     const shuffledDeck = shuffleCards(fullDeck);
@@ -75,7 +93,10 @@ function generateCards() {
     };
 };
 
-// flips the cards by adding .active class
+/**
+ * Handles the click event on a card. If two cards are activated, check to see if the cards match.
+ * @param {*} event - the click event object
+ */
 function flipCards(event) {
     console.log(event);
     console.log('i am flipping the card');
@@ -93,7 +114,12 @@ function flipCards(event) {
     
 };
 
-// Checks if two cards match
+/**
+ * Checks two activated cards to see if they match based on name attribute.
+ * If cards match, a match attribute is added and the active attribute is removed.
+ * if cards don't match, the tries left are updated and the cards are flipped back.
+ * @param {*} event - two cards activated
+ */
 function checkCards(event) {
     console.log('inside the checkCards function');
     const activeCards = document.querySelectorAll('.active');
@@ -113,22 +139,31 @@ function checkCards(event) {
             firstCard.classList.add('matched');
             secondCard.classList.add('matched');
 
+            // checks to see if enough matches to win
             checkWin();
         } else {
             console.log('wrong');
-            updateLives();
+            updateTries();
+            // timeout to allow for the player to see the card flip complete before it flips back
             setTimeout(() => {
                 unflipCards();
               }, 500);
+
+            // checks to see if game is lost
             checkLose();
         };
 
-        console.log(`the toggleCards.length: ${activeCards.length}`);
+        console.log(`the activeCards.length: ${activeCards.length}`);
     };
 
     return;
 };
 
+/**
+ * Flips the cards back when they don't match.
+ * Removes the active card attributes and allows the card to be clicked again.
+ * @param {*} event of two cards not matching
+ */
 // Unflips the cards if they don't match
 function unflipCards(event) {
     const flippedCards = document.querySelectorAll('.active');
@@ -150,21 +185,26 @@ function unflipCards(event) {
 //     }
 // };
 
-// Updates player lives
-function updateLives() {
-    console.log('inside updateLives function')
-    playerLives--;
-    setTimeout(() => playerLivesCount.innerText = playerLives, 1000);
-    console.log(`Player Tries left: ${playerLives}`);
+/**
+ * Updates the number of tries a player still has.
+ * Decrements player tries each time there is an unmatched set of cards.
+ */
+function updateTries() {
+    console.log('inside updateTries function')
+    playerTries--;
+    setTimeout(() => playerTriesCount.innerText = playerTries, 1000);
+    console.log(`Player Tries left: ${playerTries}`);
 };
 
-// checks to see if you win
+/**
+ * Checks if there is sufficient matched cards to win the game.
+ */
 function checkWin() {
     const matchedCards = document.querySelectorAll('.matched');
-    if (matchedCards.length === 16 ) {
+    if (matchedCards.length === (cardData.length*2) ) {
         console.log('You won! Play again?');
+        // timeout allows for last card to complete flip before displaying message
         setTimeout(() => {
-            console.log('You won! Play again?');
             openWinModal();
             //restart();
           }, 250);
@@ -173,9 +213,13 @@ function checkWin() {
     };
 };
 
+/**
+ * Checks to see if player has lost by exhausting the number of tries
+ */
 // checks to see if you lost
 function checkLose() {
-    if (playerLives === 0) {
+    if (playerTries === 0) {
+        // timeout allows for the last card to complete flip before displaying message
         setTimeout(() => {
             console.log('You lost. New Game?');
             openLoseModal();
@@ -186,19 +230,25 @@ function checkLose() {
     };
 };
 
-// Opens Lose Modal message when you lose
+/**
+ * Displays Lose message modal
+ */
 function openLoseModal() {
     var modal = document.getElementById('loseModal');
     modal.style.display = 'block';
 };
 
-// Opens Win Modal message when you lose
+/**
+ * Displays Win message modal
+ */
 function openWinModal() {
     var modal = document.getElementById('winModal');
     modal.style.display = 'block';
 };
 
-// Closes the Modal message
+/**
+ * Closes the modal message boxes upon any click on the screen
+ */
 function closeModal() {
     var loseModal = document.getElementById(`loseModal`);
     var winModal = document.getElementById('winModal');
@@ -206,30 +256,34 @@ function closeModal() {
     winModal.style.display = 'none';
 };
 
-// Resets the board
+/**
+ * Removes all the card elements from the board
+ */
 function clearBoard() {
     console.log('clearing the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
 };
 
-// Restarts the game
+/**
+ * Starts the game by populating the grid with new shuffled cards
+ */
 function startGame() {
     console.log('starting the game');
     clearBoard();
     generateCards();
-    playerLives = 20;
-    playerLivesCount.textContent = playerLives;
+    playerTries = 20;
+    playerTriesCount.textContent = playerTries;
 
 };
 
+/**
+ * Event Listeners - adds to DOM elements when DOM finishes loading before running game.
+ */
 // Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
     let playGameButton = document.getElementById('play-game-button');
-    // let resetButton = document.getElementById('reset-button');
     playGameButton.addEventListener('click', startGame);
-    //resetButton.addEventListener('click', restart);
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", closeModal);

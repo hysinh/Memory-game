@@ -6,25 +6,27 @@
     <!-- Meta tags for search engines -->
     <meta name="description" content="Happy Cake Friends Memory Game. A fun little game for everyone. Find all the matches to win.">
     <meta name="keywords" content="memory game, matching game, fun game, online game, neuroplasticity">
-    <title>Memory Game</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Title -->
+    <title>Happy Cake Friends Memory Matching Game</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon_32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon_16x16.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
         <h1>Happy Cake Friends</h1>
     </header>
     <h2>Memory Game</h1>
+
+    <!-- Main Container -->
     <div id="main-container">
         <p>Help the Happy Cake Friends get ready for their party!</p>
         <p>Find all the matching pairs to win.</p>
         <p><span class="number-tries">Number of tries left: <span id="score">20</span></span></p>
         <div class="button-container">
             <div id="play-game-button" class="button">play</div>
-            <!-- <div id="reset-button" class="button">reset</div> -->
-            <!-- <div class="button">hard</div> -->    
         </div>
 
         <!-- The Modal code originates from https://www.w3schools.com/howto/howto_css_modals.asp -->
@@ -38,61 +40,30 @@
             </div>
         </div>
 
-            <!-- The Win Message Modal -->
-            <div id="winModal" class="modal">
+        <!-- The Win Message Modal -->
+        <div id="winModal" class="modal">
 
-                <!-- Modal content -->
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>You won!</p><p>Play again?</p>
-                </div>
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>You won!</p><p>Play again?</p>
             </div>
-            
+        </div>
+        
+        <!-- Container for Cards -->
         <section id="card-container" class="card-container">
         </section>
     
-
+        <!-- Footer -->
         <footer>
-            <!--
-                <ul>
-                <li>
-                    <a
-                    href="http://www.facebook.com/"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Opens Facebook in a new tab"
-                    ><i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li>
-                    <a
-                    href="http://www.instagram.com/"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Opens Instagram in a new tab"
-                    ><i class="fa-brands fa-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a
-                    href="http://www.tiktok.com/"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Opens Tiktok in a new tab"
-                    ><i class="fa-brands fa-tiktok"></i>
-                    </a>
-                </li>
-                </ul>-->
             <p>
             <i class="fa-regular fa-copyright"></i> 2024. Happy Cake Friends Memory Game. 
             All rights reserved.
             </p>
         </footer>
     </div>
-    <script
-      src="https://kit.fontawesome.com/581121c7aa.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- link to javascript file -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
