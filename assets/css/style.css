@@ -72,7 +72,7 @@ a {
     position: relative;
     background-color: #80bc44;
     transform-style: preserve-3d; /* part of 3D rotating cards */
-    transition: transform 1s; /* part of 3D rotating cards */
+    transition: transform .5s; /* part of 3D rotating cards */
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 8px; 
 }
 
@@ -117,22 +117,6 @@ a {
     transform: rotateY(180deg); /* part of flipping cards */
 }
 
-/* Footer */
-footer {
-    padding: 2rem 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-footer p {
-    font-size: 60%;
-    padding: 1rem 0 0;
-    font-weight: bold;
-}
-
 /* The Modal (background) - MODAL code from https://www.w3schools.com/howto/howto_css_modals.asp */
 .modal {
     display: none; /* Hidden by default */
@@ -170,6 +154,22 @@ footer p {
     text-decoration: none;
     cursor: pointer;
   }
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+footer p {
+    font-size: 60%;
+    padding: 1rem 0 0;
+    font-weight: bold;
+}
 
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px) {
