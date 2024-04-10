@@ -89,6 +89,14 @@ a {
     backface-visibility: hidden;
 }
 
+.no-click {
+    pointer-events: none;
+}
+
+.matched {
+    pointer-events: none;
+}
+
 .button-container {
     display: flex;
     flex-direction: row;

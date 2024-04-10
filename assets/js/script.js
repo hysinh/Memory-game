@@ -75,19 +75,17 @@ function generateCards() {
     }
 };
 
-// flips the cards by adding .flip class
+// flips the cards by adding .active class
 function flipCards(event) {
     console.log(event);
     console.log('i am flipping the card');
     targetCard = event.target;
-    targetCard.style.pointerEvents = 'none';
-    targetCard.classList.toggle('toggleCard');
-    //targetCard.classList.toggle('flipped');
+    targetCard.classList.add('toggleCard', 'active', 'no-click');
 
-    const flippedCards = document.querySelectorAll('.flipped');
-    if (flippedCards.length < 2) {
-        // this.classList.toggle('toggleCard');
-        this.classList.toggle('flipped');
+    const activeCards = document.querySelectorAll('.active');
+    
+    if (activeCards.length === 2) {
+        console.log(`Inside flipcards activeCards.length: ${activeCards.length}`);
         checkCards(event);
     } else {
         return;
@@ -98,21 +96,22 @@ function flipCards(event) {
 // Checks if two cards match
 function checkCards(event) {
     console.log('inside the checkCards function');
-    const flippedCards = document.querySelectorAll('.flipped');
-    const toggleCards = document.querySelectorAll('.toggleCard');
-    firstCard = flippedCards[0];
-    secondCard = flippedCards[1];
+    const activeCards = document.querySelectorAll('.active');
+    console.log(`Inside check cards - activeCards.length: ${activeCards.length}`)
+    //const toggleCards = document.querySelectorAll('.toggleCard');
+    firstCard = activeCards[0];
+    secondCard = activeCards[1];
 
     // Checks to see if firstCard and secondCard match
-    if (flippedCards.length === 2) {
+    if (activeCards.length === 2) {
         if (firstCard.getAttribute('name') === secondCard.getAttribute('name')) {
             console.log(firstCard.getAttribute('name'));
             console.log(secondCard.getAttribute('name'));
             console.log('match');
-            firstCard.classList.remove('flipped');
-            secondCard.classList.remove('flipped');
-            firstCard.style.pointerEvents = 'none';
-            secondCard.style.pointerEvents = 'none';
+            firstCard.classList.remove('active');
+            secondCard.classList.remove('active');
+            firstCard.classList.add('matched');
+            secondCard.classList.add('matched');
 
             checkWin();
         } else {
@@ -123,11 +122,10 @@ function checkCards(event) {
               }, 500);
             checkLose();
         };
-        //console.log(firstCard, secondCard);
-        console.log(flippedCards.length);
 
-        console.log(`the toggleCards.length: ${flippedCards.length}`);
+        console.log(`the toggleCards.length: ${activeCards.length}`);
     };
+
     return;
 };
 
@@ -148,9 +146,10 @@ function checkCards(event) {
 
 // Unflips the cards if they don't match
 function unflipCards(event) {
-    const flippedCards = document.querySelectorAll('.flipped');
+    const flippedCards = document.querySelectorAll('.active');
     for (let c of flippedCards) {
-        c.classList.remove('flipped');
+        c.classList.remove('active');
+        c.classList.remove('no-click');
         c.classList.remove('toggleCard');
         c.style.pointerEvents = 'all';
     }
@@ -158,13 +157,13 @@ function unflipCards(event) {
 };
 
 // Disables cards that match
-function disableCards() {
-    const flippedCards = document.querySelectorAll('.flipped');
-    for (let c of flippedCards) {
-        c.classList.remove('flipped');
-        c.style.pointerEvents = 'none';
-    }
-};
+// function disableCards() {
+//     const flippedCards = document.querySelectorAll('.active');
+//     for (let c of flippedCards) {
+//         c.classList.remove('active');
+//         c.style.pointerEvents = 'none';
+//     }
+// };
 
 // Updates player lives
 function updateLives() {
