@@ -1,16 +1,3 @@
-// Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
-document.addEventListener("DOMContentLoaded", function() {
-    let playGameButton = document.getElementById('play-game-button');
-    // let resetButton = document.getElementById('reset-button');
-    playGameButton.addEventListener('click', startGame);
-    //resetButton.addEventListener('click', restart);
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.addEventListener("click", closeModal);
-
-});
-
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
@@ -261,3 +248,16 @@ function startGame() {
     playerLivesCount.textContent = playerLives;
     //resetButton();
 };
+
+// Wait for the DOM to finish loading before running the game
+// Get the button elements and add event listeners to them
+document.addEventListener("DOMContentLoaded", function() {
+    let playGameButton = document.getElementById('play-game-button');
+    // let resetButton = document.getElementById('reset-button');
+    playGameButton.addEventListener('click', startGame);
+    //resetButton.addEventListener('click', restart);
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", closeModal);
+
+});
