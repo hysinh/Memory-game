@@ -1,10 +1,10 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
-    let startButton = document.getElementById('start-game-button');
-    let resetButton = document.getElementById('reset-button');
-    startButton.addEventListener('click', restart);
-    resetButton.addEventListener('click', restart);
+    let playGameButton = document.getElementById('play-game-button');
+    // let resetButton = document.getElementById('reset-button');
+    playGameButton.addEventListener('click', startGame);
+    //resetButton.addEventListener('click', restart);
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", closeModal);
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Sets some global variables
 const cardContainer = document.querySelector('#card-container');
 const playerLivesCount = document.getElementById('score');
-let playerLives = 4;
+let playerLives = 20;
 playerLivesCount.innerHTML = playerLives;
 
 let firstCard, secondCard;
@@ -211,7 +211,7 @@ function checkLose() {
             console.log('You lost. New Game?');
             openLoseModal();
             // window.alert('You lost. New Game?');
-            restart();
+            //restart();
           }, "500");
     } else {
         return;
@@ -239,8 +239,8 @@ function closeModal() {
 };
 
 // Resets the board
-function resetBoard() {
-    console.log('Resetting the Board');
+function clearBoard() {
+    console.log('clearing the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
 };
@@ -253,11 +253,11 @@ function resetBoard() {
 // };
 
 // Restarts the game
-function restart() {
-    console.log('restarting the game');
-    resetBoard();
+function startGame() {
+    console.log('starting the game');
+    clearBoard();
     generateCards();
-    playerLives = 4;
+    playerLives = 20;
     playerLivesCount.textContent = playerLives;
     //resetButton();
 };
