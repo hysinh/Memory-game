@@ -17,6 +17,8 @@ const playerLivesCount = document.getElementById('score');
 let playerLives = 4;
 playerLivesCount.innerHTML = playerLives;
 
+let firstCard, secondCard;
+
 // The Data
 let cardData = [
     { imgSrc: "assets/images/card_happyvalley_egg.webp", name: "egg" }, 
@@ -89,39 +91,72 @@ function generateCards() {
 // flips the cards by adding .flip class
 function flipCards(event) {
     console.log(event);
-
-    // flips the cards
-    this.classList.toggle('toggleCard');
     console.log('i am flipping the card');
+    targetCard = event.target;
+    targetCard.style.pointerEvents = 'none';
+    targetCard.classList.toggle('toggleCard');
+    //targetCard.classList.toggle('flipped');
 
-    // checks to see if the cards match
-    checkCards(event);
+    const flippedCards = document.querySelectorAll('.flipped');
+    if (flippedCards.length < 2) {
+        // this.classList.toggle('toggleCard');
+        this.classList.toggle('flipped');
+        checkCards(event);
+    } else {
+        return;
+    }
+    
 };
 
 // Checks if two cards match
 function checkCards(event) {
-    const clickedCard = event.target;
-    clickedCard.classList.add('flipped');
+    console.log('inside the checkCards function');
     const flippedCards = document.querySelectorAll('.flipped');
     const toggleCards = document.querySelectorAll('.toggleCard');
-    //console.log(clickedCard);
-    console.log(`the toggleCards.length: ${toggleCards.length}`);
+    firstCard = flippedCards[0];
+    secondCard = flippedCards[1];
 
-    // Comparing the two flipped cards
+    // Checks to see if firstCard and secondCard match
     if (flippedCards.length === 2) {
-        if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
+        if (firstCard.getAttribute('name') === secondCard.getAttribute('name')) {
+            console.log(firstCard.getAttribute('name'));
+            console.log(secondCard.getAttribute('name'));
             console.log('match');
-            disableCards();
-            setTimeout(() => {checkWin()}, "500");
+            firstCard.classList.remove('flipped');
+            secondCard.classList.remove('flipped');
+            firstCard.style.pointerEvents = 'none';
+            secondCard.style.pointerEvents = 'none';
+
+            checkWin();
         } else {
             console.log('wrong');
-            unflipCards();
             updateLives();
-            setTimeout(() => {checkLose()}, "1000");
+            setTimeout(() => {
+                unflipCards();
+              }, 500);
+            checkLose();
         };
-    };
+        //console.log(firstCard, secondCard);
+        console.log(flippedCards.length);
 
+        console.log(`the toggleCards.length: ${flippedCards.length}`);
+    };
+    return;
 };
+
+    // Comparing the two flipped cards
+    // if (flippedCards.length === 2) {
+    //     if (flippedCards[0].getAttribute('name') === flippedCards[1].getAttribute('name')) {
+    //         console.log('match');
+    //         disableCards();
+    //         setTimeout(() => {checkWin()}, "500");
+    //     } else {
+    //         console.log('wrong');
+    //         unflipCards();
+    //         updateLives();
+    //         setTimeout(() => {checkLose()}, "1000");
+    //     };
+    // };
 
 
 // Unflips the cards if they don't match
@@ -129,7 +164,8 @@ function unflipCards(event) {
     const flippedCards = document.querySelectorAll('.flipped');
     for (let c of flippedCards) {
         c.classList.remove('flipped');
-        setTimeout(() => c.classList.remove('toggleCard'), 1000);
+        c.classList.remove('toggleCard');
+        c.style.pointerEvents = 'all';
     }
     console.log('i am unflipping the card');
 };
@@ -155,12 +191,12 @@ function updateLives() {
 function checkWin() {
     const toggleCards = document.querySelectorAll('.toggleCard');
     if (toggleCards.length === 16 ) {
-        unflipCards();
+        //unflipCards();
         console.log('You won! Play again?');
         setTimeout(() => {
             console.log('You won! Play again?');
             openWinModal();
-            restart();
+            //restart();
           }, "500");
     } else {
         return;
@@ -186,13 +222,13 @@ function checkLose() {
 function openLoseModal() {
     var modal = document.getElementById('loseModal');
     modal.style.display = 'block';
-}
+};
 
 // Opens Win Modal message when you lose
 function openWinModal() {
     var modal = document.getElementById('winModal');
     modal.style.display = 'block';
-}
+};
 
 // Closes the Modal message
 function closeModal() {
@@ -200,7 +236,7 @@ function closeModal() {
     var winModal = document.getElementById('winModal');
     loseModal.style.display = 'none';
     winModal.style.display = 'none';
-}
+};
 
 // Resets the board
 function resetBoard() {
@@ -225,5 +261,3 @@ function restart() {
     playerLivesCount.textContent = playerLives;
     //resetButton();
 };
-
-
