@@ -3,7 +3,7 @@
  */
 const cardContainer = document.querySelector('#card-container');
 const playerTriesCount = document.getElementById('score');
-let playerTries = 20;
+let playerTries = 15;
 playerTriesCount.innerHTML = playerTries;
 
 let firstCard, secondCard;
@@ -272,7 +272,7 @@ function startGame() {
     console.log('starting the game');
     clearBoard();
     generateCards();
-    playerTries = 20;
+    playerTries = 15;
     playerTriesCount.textContent = playerTries;
 
 };
