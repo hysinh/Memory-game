@@ -16,13 +16,9 @@ The Happy Cake Friends Memory Game is a simple, fun online game for all ages.
   * [Colour Scheme](#colour)
   * [Typography](#typography)
 * [Features](#features)
-  * [Navigation bar](#navigation-bar)
-  * [Home Page](#home-page)
-  * [About Page](#about-page)
-  * [Menu Page](#menu-page)
-  * [Cats Page](#cats-page)
-  * [Contact Form](#contact-form)
-  * [Confirmation Page](#confirmation-page)
+  * [Card Grid](#card-grid)
+  * [Play Button](#play-button)
+  * [Player Tries Remaining](#player-tries-remaining)
   * [Footer](#footer)  
   * [Favicon](#favicon)  
 * [Future Features](#future-features)
@@ -45,30 +41,26 @@ The Happy Cake Friends Memory Game is a simple, fun online game for all ages.
 ## User Experience
 Memory Game ux stories
 - ### Visitor Goal
-  Puss-N-Boba visitors can range in age and gender but they all generally are animal lovers and in particular are lovers of the cat species. The website plays an essential role in providing essential information to visitors on the cat nature of the cafe, the cafe's menu and offerings, information about the cats, and how to reach Puss-n-Boba whether in person or via social media or email which includes address, telephone, opening hours, and map information.
+  Happy Cake Friends visitors can range in age and genger but they are all generally looking for a simple, online game to entertain them featuring the cute Cake Friends characters. The website offers a short reprieve from the cares of daily life and offer entertainment via a mentally challenging memory exercise.
 - ### User stories
-  1. User looking for the cafe can access the location information via the home page as well as along the top navbar. They can access the address information, opening hours, and a map for access information.
-  2. User looking to contact the cafe can navigate to the contact page from both the home page as well as the top navbar located on each page for telephone information as well as a message contact form on the contact page. If the user prefers to contact the cafe over social media, social media icons leading to the cafe's social media are located on the footer of each page. 
-  3. User looking to easily navigate the website will find links to all the essential pages on the home page as well as along the top navbar on each page. 
-  4. User looking to find more information about the menu and boba offerings can easily navigate to the menu page via the home page link or from the top navbar located on each page. The menu page provides the essential menu and treats offerings.
-  5. Users who prefer to find the cafe's most recent menu offerings can navigate to the cafe's social media via the social media links in the footer for the newest menu offerings.
-  6. User looking to find more about cats that live at Puss-n-boba can easily navigate via a link on the home page or via the top navbar to the Cat page which provides a brief description of each cat along with a photo of the cat. It also provides some basic interaction information for users should they visit the cafe.
+  1. User looking to play a simple game while waiting for public transport.
+  2. User looking for a simple memory game to play while waiting (e.g. waiting at the GP office or riding the bus).
+  3. User is a child with a parent who needs them to be occupied with a simple, safe and entertaining memory game that can be played quietly for a period of time. 
+  4. User is a fan of the Happy Cake Friends and enjoys playing games or interacting with the Happy Cake Friends brand.
 
 ## Design
 
 - #### Site design 
-  Researching websites for other cafes and coffee shops, I was most drawn to the websites that had a clean and clear aesthetic. I went with a clean colour scheme and focused on the two main features of the cafe: Cats and Boba tea.
+  For a simple, online game, the Happy Cake Friends has a colorful, illustrated look that appeals to those who enjoy a cute, illustrated aesthetic or are fans of the Happy Cake Friends characters or brand.
 
-  The Puss-N-Boba website needed to be responsive and available on a variety of screen sizes and devices to make it as accessible as possible. I focused on the following sizes:
+  The Happy Cake Friends website needed to be responsive and available on a variety of screen sizes and devices to make it as accessible as possible. I focused on the following sizes:
 
   1. Mobile Device dimensions (small): 280px x 653px
   2. Mobile Device dimensions (larger): 375px and larger
   3. Tablet Device dimensions: 736px and larger
-  4. Laptop Device dimensions: 992px and larger 
-- #### Wireframes
-  Initially, I started by creating the initial Puss-N-Boba website wireframes with pencil and paper. After sketching out what I planned, I started laying out the HTML and basic CSS for the site in a similar way that the Love Running tutorial went.
 
-  However, I found this process to be lacking the information and details such as the colours and fonts when using too simple a wireframe. So, part way through the process, I took my wireframes to Photoshop where I worked on the color palette, typography, and imagery in greater detail.
+- #### Wireframes
+  The Happy Cake Friends website was designed by wireframes with pencil and paper. After sketching out what I planned, I started laying out the HTML and basic CSS for the site in a similar way that the Love Maths tutorial went. I made a list of the functions that I thought that the game would need and proceeded from there.
 
   <details >
   <summary>Mobile Wireframes</summary>  
@@ -88,21 +80,23 @@ Memory Game ux stories
   ![screenshot desktop wireframes](docs/documentation/screenshot_wireframe_desktop.png)
   </details>    
 - #### Colour 
-  ![screenshot of font family](docs/documentation/screenshot_color_palette.png)
-  Preferring a clean and bright aesthetic that reflected the cheeryful and pleasant interior of the cafe, the colors are designed to reflect that clean and modern aesthetic while still be fun and punchy. 
+  ![screenshot of font family](docs/documentation/screenshot_color_palette.webp)
+  The Happy Cake Friends color palette is bright, fresh, and youthful and suits the illustractor Cake Friends characters.
   <br>
   <br>
   Initially, my buttons featured white text and this, in combination with the orange background, failed the acceptable [WCAG](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) contrast ratio. Ultimately, I chose to change the text color to the same color as the rest of the website's font color to ensure readability and accessibility. I used the [Adobe Color](https://color.adobe.com/create/color-contrast-analyzer) to test the colors.
 
   ![screenshot of adobe color analysis](docs/documentation/screenshot_colorcontrast.png)
 - #### Typography
-  The font family is Montserrat. It was chosen for it's clean look, readability, and variety of weights.
+  The Happy Cake Friends logo is using the Londrina Solid font family. It offers a cartoon style that works well with the illustrated, cartoon aesthetic of the Happy Cake Friends.
+
+  The font family is Poppins. It was chosen for it's clean look, readability, and variety of weights.
 
   ![screenshot of font family](docs/documentation/screenshot_font_montserrat.png)
 
 
 ## Features
-### Navigation Bar
+### Card Grid
 <details >
 <summary></summary>  
 
@@ -113,38 +107,15 @@ The Navigation Bar is featured on all five pages of the website. The full respon
 <br>
 The Navigation Bar allows for easy navigation from page to page across all devices. The Navigation Bar allows easy navigation without the user having to revert back to the previous page using the “back” button.
 
-### Home Page
-1. #### Hero section
-   <details>
+### Play Button
+<details>
    <summary></summary>
 
    ![screenshot of index page hero image](docs/documentation/screenshot_features_index_hero.webp)
    </details>
    The Home page features a photograph of the cafe with a customer sitting with a cat as well as enjoying a boba tea. The photograph allows the user to see exactly what the venue looks like, what the atmosphere of Puss-n-Boba is like, and what to expect when you visit Puss-N-Boba.
-2. #### Cats section
-   <details>
-   <summary></summary>
 
-   ![screenshot of index page cat section](docs/documentation/screenshot_features_index_cats.png)
-   </details>
-   The Kitties in the Window section allows the user to see the image of one of the resident cats and motivates the user to visit the cafe in hopes of interacting with the profiled cats. The “Meet the Cats” button gives the user an opportunity to navigate to the Meet the Cats page where they can view and read the profiles of each cat living at the cafe.
-3. #### Boba & Treats section
-   <details>
-   <summary></summary>
-
-   ![screenshot of index page menu section](docs/documentation/screenshot_features_index_menu.png)
-   </details>
-   The Menu section showcases the other main feature of the cafe - Boba Teas and treats. The image in this section is a boba tea so that users know exactly what is the main featured menu item of the cafe. This section features an “explore” button that directs you to the Menu page and allows the user to view the different boba and menu items at the cafe.
-
-4. #### Contact Us section
-   <details>
-   <summary></summary>
-
-   ![screenshot of index page contact section](docs/documentation/screenshot_features_index_contact.png)
-   </details>
-   The Contact section offers users an additional way to navigate to the Contact page to either find location information, contact information, or the contact form.
-     
-### About Page
+### Player Tries Remaining
 <details>
 <summary></summary>
 
@@ -152,37 +123,7 @@ The Navigation Bar allows for easy navigation from page to page across all devic
 </details>
 The overall design of the website continues on the About Page featuring a Hero style image at the top with overlay text highlighting the main feature of the cafe with both imagery and copy. Below the hero image, there is a summary of the main features of the cafe. The tablet and laptop layouts are similar but the mobile version switches the content to a column layout.
 
-### Menu Page
-<details>
-<summary></summary>
 
-![screenshot of menu page](docs/documentation/screenshot_features_menu.webp)
-</details>
-The design of the menu page follows the overall the design set by the Home page with a hero image at the top with a short amount of copy summarizing the content of the page. Below this image and copy, the page provides detail about how the boba tea menu options as well as a list of potentially available treats. Again, the tablet and laptop layouts are similar but the mobile versions switches to a column layout.
-
-### Cats Page
-<details>
-<summary></summary>
-
-![screenshot of cats page](docs/documentation/screenshot_features_cats.webp)
-</details>
-The Cats Page also follows the overall design set by the Home page with a hero image at the top with a heading describing the page. The page features a small amount of text describing the cats that live at the cafe and then feature a section of cat profiles that provide a small description of each cat along with an image of the cat. The screenshot is of the tablet layout and the cat profiles are displayed as two across. On screensizes of a laptop or larger, this cat profile layout changes to three cats across while the mobile version displays in a column layout.
-
-### Contact Form
-<details>
-<summary></summary>
-
-![screenshot of contact page](docs/documentation/screenshot_features_contact.webp)
-</details>
-The Contact page deviates slightly from the precedence set by the other pages and omits the hero image. The page displays location and contact information for the cafe including a Google maps iframe which displays the cafe location and can provide directions if needed. The other main feature of the website is the contact form which allows the user to contact the cafe directly.
-
-### Confirmation Page
-<details>
-<summary></summary>
-
-![screenshot of confirmation page](docs/documentation/screenshot_features_confirmation.webp)
-</details>
-When a user completes the contact form, the user is directed to this confirmation page to let them know their form was submitted correctly and to confirmat that the cafe will contact them. The page also provides an alternate contact method (telephone) should urgency be a consideration. The page is responsive and adjusts to screensizes as appropriate. The design is remains the same across different devices.
 
 ### Footer
 <details>
@@ -202,14 +143,15 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
 
 
 ## Future Features
-- A future feature would be a booking feature that allows people to prebook tables and timeslots for a portion of the tables to allow visitors to ensure they will have a table available should they visit the cafe.
-- As an add-on to this booking feature, an inquiry form to book the cafe for special events or larger groups.
-- Also for future development, a feature that allows users to pre-order Boba tea and/or treats for collection/takeaway.
+- A future feature would be allow for different levels or different numbers of tries to increase or decrease difficulty.
+- A future feature would allow for different character groups to displayed depending on the level of difficulty.
+- Also for future development, additional simple games featuring the characters. 
 
 ## Technologies
   ### Languages Used
   - HTML5
   - CSS
+  - Javascript
 
   ### Technologies and Programs Used
   - GitHub - used to save and store all the files for this website
@@ -280,7 +222,7 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
     <details >
     <summary>Index Page Lighthouse audit</summary>  
 
-    ![screenshot of index page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_index.png)
+    ![screenshot of index page lighthouse audit](docs/documentation/Screenshot_lighthouse_desktop.png)
     </details>
     
     <br>
@@ -289,32 +231,7 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
     <details >
     <summary>Index Page Lighthouse audit</summary>  
 
-    ![screenshot of index page lighthouse audit](docs/documentation/screenshot_lighthouse_mobile_index.png)
-    </details>
-    <details >
-    <summary>About Page Lighthouse audit</summary>  
-
-    ![screenshot of about page lighthouse audit](docs/documentation/screenshot_lighthouse_mobile_about.png)
-    </details>
-    <details >
-    <summary>Menu Page Lighthouse audit</summary>  
-
-    ![screenshot of menu page lighthouse audit](docs/documentation/screenshot_lighthouse_mobile_menu.png)
-    </details>
-    <details >
-    <summary>Cats Page Lighthouse audit</summary>  
-
-    ![screenshot of cats page lighthouse audit](docs/documentation/screenshot_lighthouse_mobile_cats.png)
-    </details> 
-    <details >
-    <summary>Contact Page Lighthouse audit: Audit revealed a bug that I was unable to resolve. Please see table of unfixed bugs for details.</summary>  
-
-    ![screenshot of contact page lighthouse audit](docs/documentation/screenshot_lighthouse_mobile_contact.png)
-    </details>
-    <details >
-    <summary>Confirmation Page Lighthouse audit</summary>  
-
-    ![screenshot of confirmation page lighthouse audit](docs/documentation/screenshot_lighthouse_mobile_confirmation.png)
+    ![screenshot of index page lighthouse audit](docs/documentation/Screenshot_lighthouse_mobile.png)
     </details>
 
   ### Manual Testing
@@ -356,16 +273,18 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
   | Invalid 'align' property | style.css | Corrected invalid align property to text-align property  |
   | Unnecessary ; tags | script.js | I had put ; at the end of every function that was unncessary. Resolved by removing them. |
   | Missing ; tags | Script.js | Missing ; at the end of console.log in js file in two places. Added the ; as necessary. |
-  | bug | page | fix |
+  | Accessibility | Index page | Document doesn't use legible font sizes at the mobile size  |
 
   ### Unfixed Bugs
-  - Lower SEO Lighthouse score due to Blocking directive: x-robots-tag: noindex, nofollow. I could not find any code matching this in my website. So, I am unsure why the website sends this message to search engines. I will need to do more research to find out what is the cause for this.
+  - Document doesn't use legible font sizes at the mobile size - FIX
   
 
 ## Credits
 ### Content
 - Content for website was writing by myself
-- Instructions on how to implement Lighthouse Chrome Developer Tool was taken from: https://developer.chrome.com/docs/devtools/lighthouse
+- Artwork was created by myself on Adope Photoshop
+- 
+- 
 - Correct syntax for implementation of how to fit Background Image to a Div using CSS: https://www.geeksforgeeks.org/how-to-fit-background-image-to-div-using-css/
 - W3C CSS Validator: https://jigsaw.w3.org/css-validator/
 - How to Center align a div element: https://www.w3schools.com/html/html_div.asp
@@ -387,4 +306,4 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
 
 
 ### Media
-- Boba Tea Image <a href="https://www.freepik.com/free-ai-image/3d-rendering-chinese-reunion-dinner-drink_95017479.htm#fromView=search&page=1&position=0&uuid=b6560aec-2550-4e00-87e1-d1f93dd01820">Image by freepik</a>
+- The Happy Cake Friends characters were created by my daughter, Liloux Smith. They were redrawn in Adobe Photoshop for the purposes of this project.
