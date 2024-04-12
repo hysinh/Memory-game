@@ -90,7 +90,7 @@ function generateCards() {
         
         // Adds event listeners
         card.addEventListener('click', flipCards);
-    };
+    }
 }
 
 /**
@@ -100,7 +100,7 @@ function generateCards() {
 function flipCards(event) {
     console.log(event);
     console.log('i am flipping the card');
-    targetCard = event.target;
+    let targetCard = event.target;
     targetCard.classList.add('toggleCard', 'active', 'no-click');
 
     const activeCards = document.querySelectorAll('.active');
@@ -110,8 +110,7 @@ function flipCards(event) {
         checkCards(event);
     } else {
         return;
-    };
-    
+    }
 }
 
 /**
@@ -123,7 +122,7 @@ function flipCards(event) {
 function checkCards(event) {
     let firstCard, secondCard;
     const activeCards = document.querySelectorAll('.active');
-    console.log(`Inside check cards - activeCards.length: ${activeCards.length}`)
+    console.log(`Inside check cards - activeCards.length: ${activeCards.length}`);
 
     firstCard = activeCards[0];
     secondCard = activeCards[1];
@@ -151,10 +150,10 @@ function checkCards(event) {
 
             // checks to see if game is lost
             checkLose();
-        };
+        }
 
         console.log(`the activeCards.length: ${activeCards.length}`);
-    };
+    }
 
     return;
 }
@@ -172,7 +171,7 @@ function unflipCards(event) {
         c.classList.remove('no-click');
         c.classList.remove('toggleCard');
         c.style.pointerEvents = 'all';
-    };
+    }
     console.log('i am unflipping the card');
 }
 
@@ -190,7 +189,7 @@ function unflipCards(event) {
  * Decrements player tries each time there is an unmatched set of cards.
  */
 function updateTries() {
-    console.log('inside updateTries function')
+    console.log('inside updateTries function');
     playerTries--;
     setTimeout(() => playerTriesCount.innerText = playerTries, 1000);
     console.log(`Player Tries left: ${playerTries}`);
@@ -221,7 +220,7 @@ function checkWin() {
           }, 250);
     } else {
         return;
-    };
+    }
 }
 
 /**
@@ -239,7 +238,7 @@ function checkLose() {
           }, 200);
     } else {
         return;
-    };
+    }
 }
 
 /**
