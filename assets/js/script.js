@@ -1,12 +1,11 @@
 /**
  * Sets some global variables by getting elements from the DOM
  */
-const cardContainer = document.querySelector('#card-container');
 const playerTriesCount = document.getElementById('score');
 let playerTries = 4;
 playerTriesCount.innerHTML = playerTries;
 
-let firstCard, secondCard;
+
 
 /**
  * The Card Data set
@@ -63,6 +62,7 @@ function shuffleCards(array) {
  * Adds event listeners to the card div element.
  */
 function generateCards() {
+    const cardContainer = document.querySelector('#card-container');
     const fullDeck = duplicateData(cardData);
     const shuffledDeck = shuffleCards(fullDeck);
     console.log(shuffledDeck);
@@ -121,7 +121,7 @@ function flipCards(event) {
  * @param {*} event - two cards activated
  */
 function checkCards(event) {
-    console.log('inside the checkCards function');
+    let firstCard, secondCard;
     const activeCards = document.querySelectorAll('.active');
     console.log(`Inside check cards - activeCards.length: ${activeCards.length}`)
 
@@ -297,5 +297,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", closeModal);
+
+    // const cardContainer = document.querySelector('#card-container');
+    const playerTriesCount = document.getElementById('score');
+    let playerTries = 4;
+    playerTriesCount.innerHTML = playerTries;
 
 });
