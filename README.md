@@ -263,9 +263,18 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
     <details >
     <summary>CSS Validation</summary>  
 
-    ![screenshot of css validation](docs/documentation/screenshot_css_validator.webp)
+    ![screenshot of css validation](docs/documentation/Screenshot_cssvalidator.png)
     </details>
 
+  - #### Javascript Validation
+    No errors were found when passing through the JSHint Javascript validator
+    <details >
+    <summary>Javascript Validation</summary>  
+
+    ![screenshot of css validation](docs/documentation/Screenshot_jshint_jsvalidator.png)
+    </details>
+
+  
   - #### Lighthouse Performace Audit via Chrome Dev Tools
     Desktop Lighthouse Performance Audits
     <details >
@@ -273,36 +282,7 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
 
     ![screenshot of index page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_index.png)
     </details>
-    <details >
-    <summary>About Page Lighthouse audit</summary>  
-
-    ![screenshot of about page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_about.png)
-    </details>
-    <details >
-    <summary>Menu Page Lighthouse audit</summary>  
-
-    ![screenshot of menu page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_menu.png)
-    </details>
-    <details >
-    <summary>Cats Page Lighthouse audit</summary>  
-
-    ![screenshot of cats page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_cats.png)
-    </details>
-    <details>
-    <summary>Contact Page Lighthouse audit: Audit revealed a Best Practices bug that I was unable to resolve. Please see table of unfixed bugs for details.</summary>  
-
-    ![screenshot of contact page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_contact.png)
-    </details>
-    <details>
-    <summary>Contact Page Lighthouse bug</summary>  
-
-    ![screenshot of contact page lighthouse audit bug](docs/documentation/screenshot_lighthouse_desktop_contact_bestpractices_bug.png)
-    </details>
-    <details >
-    <summary>Confirmation Page Lighthouse audit</summary>  
-
-    ![screenshot of confirmation page lighthouse audit](docs/documentation/screenshot_lighthouse_desktop_confirmation.png)
-    </details>
+    
     <br>
 
     Mobile Lighthouse Performance Audits
@@ -372,8 +352,9 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
   | Bug | Page | Fix |
   | --- | ---- | --- |
   | Missing </h2> | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
-  | Section element | Index page | HTML validator suggested changing section element to div to eliminate issues with lack of heading. I changed the section element to a div element.  |
-  | Unnecessary ; tags | Script.js | I had put ; at the end of every function that was unncessary. Resolved by removing them. |
+  | Section element | Index page | HTML validator suggested changing section element to div to eliminate issues with lack of heading. I changed the section element to a div element. |
+  | Invalid 'align' property | style.css | Corrected invalid align property to text-align property  |
+  | Unnecessary ; tags | script.js | I had put ; at the end of every function that was unncessary. Resolved by removing them. |
   | Missing ; tags | Script.js | Missing ; at the end of console.log in js file in two places. Added the ; as necessary. |
   | bug | page | fix |
 
