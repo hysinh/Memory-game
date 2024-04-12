@@ -175,15 +175,6 @@ function unflipCards(event) {
     console.log('i am unflipping the card');
 }
 
-// Disables cards that match
-// function disableCards() {
-//     const flippedCards = document.querySelectorAll('.active');
-//     for (let c of flippedCards) {
-//         c.classList.remove('active');
-//         c.style.pointerEvents = 'none';
-//     }
-// };
-
 /**
  * Updates the number of tries a player still has.
  * Decrements player tries each time there is an unmatched set of cards.
@@ -213,6 +204,7 @@ function checkWin() {
     const matchedCards = document.querySelectorAll('.matched');
     if (matchedCards.length === (cardData.length*2) ) {
         console.log('You won! Play again?');
+        
         // timeout allows for last card to complete flip before displaying message
         setTimeout(() => {
             openWinModal();
@@ -297,10 +289,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", closeModal);
-
-    // const cardContainer = document.querySelector('#card-container');
-    // const playerTriesCount = document.getElementById('score');
-    // let playerTries = 15;
-    // playerTriesCount.innerHTML = playerTries;
 
 });
