@@ -1,10 +1,10 @@
-# Puss-n-Boba
-  ![screenshot of landing page](docs/documentation/screenshot_amiresponsive.png)
+# Happy Cake Friends Memory Game
+  ![screenshot of landing page](docs/documentation/Screenshot_amiresponsive.png)
 
-  [View Live Project Here](https://hysinh.github.io/puss-n-boba/)
+  [View Live Project Here](https://hysinh.github.io/Memory-game/)
 
 ## Introduction
-Memory Game - fun online game for all ages
+The Happy Cake Friends Memory Game is a simple, fun online game for all ages.
 
 ## CONTENTS  
   
