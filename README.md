@@ -254,32 +254,7 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
     <details >
     <summary>Index Page HTML Validation</summary>  
 
-    ![screenshot of index page validation](docs/documentation/screenshot_html_index.png)
-    </details>
-    <details >
-    <summary>About Page HTML Validation</summary>  
-
-    ![screenshot of about page validation](docs/documentation/screenshot_html_about.png)
-    </details>
-    <details >
-    <summary>Menu Page HTML Validation</summary>  
-
-    ![screenshot of menu page validation](docs/documentation/screenshot_html_menu.png)
-    </details>
-    <details >
-    <summary>Meet Cats Page HTML Validation</summary>  
-
-    ![screenshot of meet cats page validation](docs/documentation/screenshot_html_meetcats.png)
-    </details>
-    <details >
-    <summary>Contact Page HTML Validation</summary>  
-
-    ![screenshot of contact page validation](docs/documentation/screenshot_html_contact.png)
-    </details>
-    <details >
-    <summary>Confirmation Page HTML Validation</summary>  
-
-    ![screenshot of confirmation page validation](docs/documentation/screenshot_html_confirmation.png)
+    ![screenshot of index page validation](docs/documentation/Screenshot_htmlvalidator.png)
     </details>
      
     
@@ -396,9 +371,11 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
-   | Missing </h2> | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
+  | Missing </h2> | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
+  | Section element | Index page | HTML validator suggested changing section element to div to eliminate issues with lack of heading. I changed the section element to a div element.  |
   | Unnecessary ; tags | Script.js | I had put ; at the end of every function that was unncessary. Resolved by removing them. |
   | Missing ; tags | Script.js | Missing ; at the end of console.log in js file in two places. Added the ; as necessary. |
+  | bug | page | fix |
 
   ### Unfixed Bugs
   - Lower SEO Lighthouse score due to Blocking directive: x-robots-tag: noindex, nofollow. I could not find any code matching this in my website. So, I am unsure why the website sends this message to search engines. I will need to do more research to find out what is the cause for this.

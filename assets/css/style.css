@@ -50,7 +50,7 @@ a {
 
 #main-container {
     width: 95%;
-    align: center;
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
