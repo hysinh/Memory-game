@@ -3,7 +3,7 @@
  */
 const cardContainer = document.querySelector('#card-container');
 const playerTriesCount = document.getElementById('score');
-let playerTries = 15;
+let playerTries = 4;
 playerTriesCount.innerHTML = playerTries;
 
 let firstCard, secondCard;
@@ -196,6 +196,14 @@ function updateTries() {
     console.log(`Player Tries left: ${playerTries}`);
 };
 
+function lockBoard() {
+    const cards = document.querySelectorAll('.card');
+    for (let card of cards) {
+        card.removeEventListener('click', flipCards);
+        card.style.pointerEvents = 'none';
+    }
+}
+
 /**
  * Checks if there is sufficient matched cards to win the game.
  */
@@ -218,7 +226,9 @@ function checkWin() {
  */
 // checks to see if you lost
 function checkLose() {
+    
     if (playerTries === 0) {
+        lockBoard();
         // timeout allows for the last card to complete flip before displaying message
         setTimeout(() => {
             console.log('You lost. New Game?');
@@ -272,7 +282,7 @@ function startGame() {
     console.log('starting the game');
     clearBoard();
     generateCards();
-    playerTries = 15;
+    playerTries = 4;
     playerTriesCount.textContent = playerTries;
 
 };
