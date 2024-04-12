@@ -2,7 +2,7 @@
  * Sets some global variables by getting elements from the DOM
  */
 const playerTriesCount = document.getElementById('score');
-let playerTries = 4;
+let playerTries = 15;
 playerTriesCount.innerHTML = playerTries;
 
 
@@ -28,7 +28,7 @@ let cardData = [
 function duplicateData() {
     let newData = cardData.concat(cardData);
     return newData;
-};
+}
 
 /**
  * Randomizes the array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle
@@ -52,7 +52,7 @@ function shuffleCards(array) {
     }
 
     return array; // return the array
-};
+}
 
 /**
  * Generates the card elements and adds them to the DOM.
@@ -91,7 +91,7 @@ function generateCards() {
         // Adds event listeners
         card.addEventListener('click', flipCards);
     };
-};
+}
 
 /**
  * Handles the click event on a card. If two cards are activated, check to see if the cards match.
@@ -112,7 +112,7 @@ function flipCards(event) {
         return;
     };
     
-};
+}
 
 /**
  * Checks two activated cards to see if they match based on name attribute.
@@ -157,7 +157,7 @@ function checkCards(event) {
     };
 
     return;
-};
+}
 
 /**
  * Flips the cards back when they don't match.
@@ -174,7 +174,7 @@ function unflipCards(event) {
         c.style.pointerEvents = 'all';
     };
     console.log('i am unflipping the card');
-};
+}
 
 // Disables cards that match
 // function disableCards() {
@@ -194,8 +194,11 @@ function updateTries() {
     playerTries--;
     setTimeout(() => playerTriesCount.innerText = playerTries, 1000);
     console.log(`Player Tries left: ${playerTries}`);
-};
+}
 
+/**
+ * Locks the board when player attempts have reached been exhausted.
+ */
 function lockBoard() {
     const cards = document.querySelectorAll('.card');
     for (let card of cards) {
@@ -219,7 +222,7 @@ function checkWin() {
     } else {
         return;
     };
-};
+}
 
 /**
  * Checks to see if player has lost by exhausting the number of tries
@@ -233,12 +236,11 @@ function checkLose() {
         setTimeout(() => {
             console.log('You lost. New Game?');
             openLoseModal();
-            // window.alert('You lost. New Game?');
-          }, 250);
+          }, 200);
     } else {
         return;
     };
-};
+}
 
 /**
  * Displays Lose message modal
@@ -246,7 +248,7 @@ function checkLose() {
 function openLoseModal() {
     var modal = document.getElementById('loseModal');
     modal.style.display = 'block';
-};
+}
 
 /**
  * Displays Win message modal
@@ -254,7 +256,7 @@ function openLoseModal() {
 function openWinModal() {
     var modal = document.getElementById('winModal');
     modal.style.display = 'block';
-};
+}
 
 /**
  * Closes the modal message boxes upon any click on the screen
@@ -264,7 +266,7 @@ function closeModal() {
     var winModal = document.getElementById('winModal');
     loseModal.style.display = 'none';
     winModal.style.display = 'none';
-};
+}
 
 /**
  * Removes all the card elements from the board
@@ -273,7 +275,7 @@ function clearBoard() {
     console.log('clearing the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
-};
+}
 
 /**
  * Starts the game by populating the grid with new shuffled cards
@@ -282,10 +284,9 @@ function startGame() {
     console.log('starting the game');
     clearBoard();
     generateCards();
-    playerTries = 4;
+    playerTries = 15;
     playerTriesCount.textContent = playerTries;
-
-};
+}
 
 /**
  * Event Listeners - adds to DOM elements when DOM finishes loading before running game.
@@ -299,8 +300,8 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("click", closeModal);
 
     // const cardContainer = document.querySelector('#card-container');
-    const playerTriesCount = document.getElementById('score');
-    let playerTries = 4;
-    playerTriesCount.innerHTML = playerTries;
+    // const playerTriesCount = document.getElementById('score');
+    // let playerTries = 15;
+    // playerTriesCount.innerHTML = playerTries;
 
 });
