@@ -60,7 +60,7 @@ Memory Gamezz ux stories
   3. Tablet Device dimensions: 736px and larger
 
 - #### Wireframes
-  The Happy Cake Friends website was designed by wireframes with pencil and paper. After sketching out what I planned, I started laying out the HTML and basic CSS for the site in a similar way that the Love Maths tutorial went. I made a list of the functions that I thought that the game would need and proceeded from there.
+  The Happy Cake Friends website was designed by wireframes with pencil and paper. After sketching out what I planned, I started laying out the HTML and basic CSS for the site in a similar way that the Love Maths tutorial went. I made a list of the functions that I thought that the game would need and proceeded from there. In the end, I did not use different size cards for different levels or different numbers of lives for different levels on this version. I decided to keep it simple and stay with a single version. Difficulty levels can be implemented in a future version of the Happy Cake Friends Memory Game. I recreated the wireframes in a digital version, but an image of the original handdrawn wireframes is included below.
 
   <details >
   <summary>Mobile Wireframe</summary>  
@@ -90,15 +90,27 @@ Memory Gamezz ux stories
   The Happy Cake Friends color palette is bright, fresh, and youthful and suits the illustractor Cake Friends characters.
   <br>
   <br>
-  Initially, my buttons featured white text and this, in combination with the orange background, failed the acceptable [WCAG](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) contrast ratio. Ultimately, I chose to change the text color to the same color as the rest of the website's font color to ensure readability and accessibility. I used the [Adobe Color](https://color.adobe.com/create/color-contrast-analyzer) to test the colors.
+  Initially, my buttons featured white text and this, in combination with the orange background, failed the acceptable [WCAG](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) contrast ratio. Ultimately, I changed the text color to a dark gray color to ensure readability and accessibility. The Memory Game text was also tested against the blue and green background. At 14 font size and bold, the yellow color was was still readable. So, I chose to leave the colors at the top as is since they text is sufficiently large enough for readability. I used the [Adobe Color](https://color.adobe.com/create/color-contrast-analyzer) to test the colors.
 
-  ![screenshot of adobe color analysis](docs/documentation/screenshot_colorcontrast.png)
+  <details >
+  <summary>Adobe color analysis for the button</summary>  
+
+  ![screenshot desktop wireframes](docs/documentation/Screenshot_coloranalysis_yellow-button.png)
+  </details> 
+
+  <details >
+  <summary>Adobe color analysis for the orange text at the top of the page</summary>  
+
+  ![screenshot desktop wireframes](docs/documentation/Screenshot_coloranalysis_yellow-text-on-blue-background.png)
+  </details> 
+
 - #### Typography
   The Happy Cake Friends logo is using the Londrina Solid font family. It offers a cartoon style that works well with the illustrated, cartoon aesthetic of the Happy Cake Friends.
 
-  The font family is Poppins. It was chosen for it's clean look, readability, and variety of weights.
+  The remainder of the copy is in the font family is Poppins. It was chosen for it's clean look, readability, and variety of weights. Both fonts were sourced from Google Fonts.
 
-  ![screenshot of font family](docs/documentation/screenshot_font_montserrat.png)
+  ![screenshot of font family](docs/documentation/Screenshot_font_poppins.png)
+  ![screenshot of font family](docs/documentation/Screenshot_font_londrina-solid.png)
 
 
 ## Features

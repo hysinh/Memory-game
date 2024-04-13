@@ -34,7 +34,7 @@ h1{
 h2 {
     font-size: 1.5rem;
     margin: 1rem 0;
-    color: orange;
+    color: #ffa500;
     
 }
 
@@ -103,7 +103,7 @@ a {
 }
 
 .button {
-    background-color: orange;
+    background-color: #ffa500;
     margin: 1rem;
     padding: .5rem;
     width: 150px;
@@ -114,6 +114,7 @@ a {
     font-size: medium;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 8px; 
 }
 
 .card .front {
@@ -171,9 +172,10 @@ footer {
 }
 
 footer p {
-    font-size: 60%;
+    font-size: .75em;
     padding: 1rem 0 0;
-    font-weight: bold;
+    font-weight: normal;
+    color: #363636;
 }
 
 /* Media query for mobile devices and later (375px and up) */
@@ -211,6 +213,11 @@ footer p {
     /* Modal Content/Box */
     .modal-content {
         width: 60%; /* Could be more or less, depending on screen size */
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1em;
     }
 }
 
