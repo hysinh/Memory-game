@@ -190,7 +190,7 @@ function lockBoard() {
 function checkWin() {
     const matchedCards = document.querySelectorAll('.matched');
     if (matchedCards.length === (cardData.length*2) ) {
-        
+        lockBoard();
         // timeout allows for last card to complete flip before displaying message
         setTimeout(() => {
             openWinModal();
