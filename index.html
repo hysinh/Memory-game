@@ -1,70 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta tags for search engines -->
-    <meta name="description" content="Happy Cake Friends Memory Game. A fun little game for everyone. Find all the matches to win.">
-    <meta name="keywords" content="memory game, matching game, fun game, online game, neuroplasticity">
+    <meta
+      name="description"
+      content="Happy Cake Friends Memory Game. A fun little game for everyone. Find all the matches to win."
+    />
+    <meta
+      name="keywords"
+      content="memory game, matching game, fun game, online game, neuroplasticity"
+    />
     <!-- Title -->
     <title>Happy Cake Friends Memory Matching Game</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon_32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon_16x16.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon_32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon_16x16.png"
+    />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <a href="index.html" aria-label="Home, Happy Cake Friends Memory Game">
-            <h1>Happy Cake Friends</h1>
-        </a>
+      <a href="index.html" aria-label="Home, Happy Cake Friends Memory Game">
+        <h1>Happy Cake Friends</h1>
+      </a>
     </header>
     <h2>Memory Game</h2>
 
     <!-- Main Container -->
     <div id="main-container">
-        <p>Find all the matching pairs to win.</p>
-        <p><span class="number-tries">Number of tries left: <span id="score">0</span></span></p>
-        <div class="button-container">
-            <div id="play-game-button" class="button">play</div>
-        </div>
+      <p>Find all the matching pairs to win.</p>
+      <p>
+        <span class="number-tries"
+          >Number of tries left: <span id="score">0</span></span
+        >
+      </p>
+      <div class="button-container">
+        <div id="play-game-button" class="button">play</div>
+      </div>
 
-        <!-- The Modal code originates from https://www.w3schools.com/howto/howto_css_modals.asp -->
-        <!-- The Lose Message Modal -->
-        <div id="loseModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Sorry! You lose.</p>
-            </div>
+      <!-- The Modal code originates from https://www.w3schools.com/howto/howto_css_modals.asp -->
+      <!-- The Lose Message Modal -->
+      <div id="loseModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Sorry! You lose.</p>
         </div>
+      </div>
 
-        <!-- The Win Message Modal -->
-        <div id="winModal" class="modal">
+      <!-- The Win Message Modal -->
+      <div id="winModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>You won!</p>
+        </div>
+      </div>
 
-            <!-- Modal content -->
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>You won!</p>
-            </div>
-        </div>
-        
-        <!-- Container for Cards -->
-        <div id="card-container" class="card-container">
-        </div>
-    
-        <!-- Footer -->
-        <footer>
-            <p>
-            <i class="fa-regular fa-copyright"></i> 2024. Happy Cake Friends Memory Game. 
-            All rights reserved.
-            </p>
-        </footer>
+      <!-- Container for Cards -->
+      <div id="card-container" class="card-container"></div>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          <i class="fa-regular fa-copyright"></i> 2024. Happy Cake Friends
+          Memory Game. All rights reserved.
+        </p>
+      </footer>
     </div>
 
     <!-- link to javascript file -->
     <script src="assets/js/script.js"></script>
-</body>
+  </body>
 </html>
