@@ -306,12 +306,15 @@ A favicon was added to provide further visual support of the Happy Cake Friends 
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
+  | Can still click on cards after lose game | Index page | Added a lockBoard function in JS file to resolve. |
+  | Can still click on a third card when two first cards are being compared | Index page | Change < 2 in checkCards function to === 2 to prevent a third card from being flipped | 
   | Missing </h2> | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
   | Section element | Index page | HTML validator suggested changing section element to div to eliminate issues with lack of heading. I changed the section element to a div element. |
+  | Accessibility | Index page | Document doesn't use legible font sizes at the mobile size in the footer. The footer text size was adjusted to ensure better readability |
   | Invalid 'align' property | style.css | Removed align property  |
   | Unnecessary ; tags | script.js | I had put ; at the end of every function that was unncessary. Resolved by removing them. |
   | Missing ; tags | Script.js | Missing ; at the end of console.log in js file in two places. Added the ; as necessary. |
-  | Accessibility | Index page | Document doesn't use legible font sizes at the mobile size in the footer. The footer text size was adjusted to ensure better readability |
+  
 
   ### Unfixed Bugs
   - At this time, because the cards all are added as elements to the DOM, it is possible to cheat by viewing the html source. You are able to see each image and it's names and it's location. I do not have enough programming knowledge at this time to avoid this.
