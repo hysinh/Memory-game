@@ -63,21 +63,27 @@ Memory Gamezz ux stories
   The Happy Cake Friends website was designed by wireframes with pencil and paper. After sketching out what I planned, I started laying out the HTML and basic CSS for the site in a similar way that the Love Maths tutorial went. I made a list of the functions that I thought that the game would need and proceeded from there.
 
   <details >
-  <summary>Mobile Wireframes</summary>  
+  <summary>Mobile Wireframe</summary>  
 
-  ![screenshot of mobile wireframes](docs/documentation/screenshot_wireframe_mobile.png)
+  ![screenshot of mobile wireframes](docs/documentation/Screenshot_wireframe_mobile.png)
+  </details>
+
+  <details >
+  <summary>Mobile 375 pexels and larger Wireframe</summary>  
+
+  ![screenshot of mobile wireframes](docs/documentation/Screenshot_wireframe_mobile_lrg.png)
   </details> 
 
   <details >
-  <summary>Tablet Wireframes</summary>  
+  <summary>Desktop Wireframe</summary>  
 
-  ![screenshot tablet wireframes](docs/documentation/screenshot_wireframe_tablet.png)
+  ![screenshot tablet wireframes](docs/documentation/Screenshot_wireframe_laptop_desktop.png)
   </details>    
 
   <details >
-  <summary>Desktop Wireframes</summary>  
+  <summary>Original Handdrawn Wireframe</summary>  
 
-  ![screenshot desktop wireframes](docs/documentation/screenshot_wireframe_desktop.png)
+  ![screenshot desktop wireframes](docs/documentation/wireframe_memory-game.jpg)
   </details>    
 - #### Colour 
   ![screenshot of font family](docs/documentation/screenshot_color_palette.webp)
