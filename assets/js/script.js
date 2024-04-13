@@ -143,6 +143,7 @@ function checkCards(event) {
         } else {
             console.log('wrong');
             updateTries();
+            
             // timeout to allow for the player to see the card flip complete before it flips back
             setTimeout(() => {
                 unflipCards();
@@ -223,11 +224,12 @@ function checkLose() {
     
     if (playerTries === 0) {
         lockBoard();
+
         // timeout allows for the last card to complete flip before displaying message
         setTimeout(() => {
             console.log('You lost. New Game?');
             openLoseModal();
-          }, 200);
+          }, 250);
     } else {
         return;
     }

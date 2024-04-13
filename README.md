@@ -39,7 +39,7 @@ The Happy Cake Friends Memory Game is a simple, fun online game for all ages.
 ---   
 
 ## User Experience
-Memory Game ux stories
+Memory Gamezz ux stories
 - ### Visitor Goal
   Happy Cake Friends visitors can range in age and genger but they are all generally looking for a simple, online game to entertain them featuring the cute Cake Friends characters. The website offers a short reprieve from the cares of daily life and offer entertainment via a mentally challenging memory exercise.
 - ### User stories
