@@ -118,38 +118,42 @@ Memory Gamezz ux stories
 <details >
 <summary></summary>  
 
-![screenshot navbar](docs/documentation/screenshot_features_navbar.png)
+![screenshot card grid](docs/documentation/Screenshot_features_grid.png)
 </details>  
-The Navigation Bar is featured on all five pages of the website. The full responsive navigation bar includes links to the Logo, About page, Menu Page, Our Cats page, and Contact page. Each navigation bar is identical and allows for easy navigation of the user.
-<br>
-<br>
-The Navigation Bar allows for easy navigation from page to page across all devices. The Navigation Bar allows easy navigation without the user having to revert back to the previous page using the “back” button.
+The card grid is the main feature of the page and website. Javascript generates the cards on demand when the user presses the "Play" button. The grid is four cards wide and four cards down creating 16 cards total. There are eight matching pairs that are randomly generated each time the card grid is reset. The cards feature the bright and colorful Happy Cake Friends characters.
 
 ### Play Button
 <details>
-   <summary></summary>
+<summary></summary>
 
-   ![screenshot of index page hero image](docs/documentation/screenshot_features_index_hero.webp)
-   </details>
-   The Home page features a photograph of the cafe with a customer sitting with a cat as well as enjoying a boba tea. The photograph allows the user to see exactly what the venue looks like, what the atmosphere of Puss-n-Boba is like, and what to expect when you visit Puss-N-Boba.
+![screenshot of play button](docs/documentation/Screenshot_features_play-button.png)
+</details>
+The Play Button is used to begin the game or reset the grid at any time. When a player wins or loses the game, the player can click on the Play Button to reset the game at that time. However, the play button can reset the game at any time and is not limited to the end of the game.
 
 ### Player Tries Remaining
 <details>
 <summary></summary>
 
-![screenshot of about page](docs/documentation/screenshot_features_about.png)
+![screenshot of player tries](docs/documentation/Screenshot_features_playerTries.png)
 </details>
-The overall design of the website continues on the About Page featuring a Hero style image at the top with overlay text highlighting the main feature of the cafe with both imagery and copy. Below the hero image, there is a summary of the main features of the cafe. The tablet and laptop layouts are similar but the mobile version switches the content to a column layout.
+The Player Tries Remaining section displays the current tries that a player has as they attempt matches. At the beginning, each player is allocated 15 Tries or attempts. Each mismatched pair decrements the Player Tries by 1 until it reaches 0. At this point, a message pops up to let the player know that they have lost the game and they can play again if they choose.
 
+### Win Game and Lose Game Modals
+<details>
+<summary></summary>
+
+![screenshot of win game modal](docs/documentation/Screenshot_features_modals.png)
+</details>
+The Player Tries Remaining section displays the current tries that a player has as they attempt matches. At the beginning, each player is allocated 15 Tries or attempts. Each mismatched pair decrements the Player Tries by 1 until it reaches 0. At this point, a message pops up to let the player know that they have lost the game and they can play again if they choose. Should the player find all the matches before the Player Tries reaches zero. Then, they have won the game and a Win Game message pops up at that time. They can also choose to play the game again at this point.
 
 
 ### Footer
 <details>
 <summary></summary>
 
-![screenshot of footer](docs/documentation/screenshot_features_footer.webp)
+![screenshot of footer](docs/documentation/Screenshot_features_footer.png)
 </details>
-The footer section includes links to three relevant social media sites for Puss-n-Boba. The links open to new tabs and allow for easy navigation for the user. The footer encourages the user to interact with Puss-n-Boba in other ways and to stay connected to Puss-n-Boba on social media for the latest events, antics of the cats, and updates on featured Boba teas and treats. The design of the footer is responsive and remains consistent across mobile, tablet, and laptop device screen sizes.
+The footer section features a simple copyright message for the Happy Cake Friends. 
 
 ### Favicon
 <details >
