@@ -161,7 +161,7 @@ The footer section features a simple copyright message for the Happy Cake Friend
 
 ![screenshot favicon](docs/documentation/screenshot_features_favicon.png)
 </details>  
-A favicon was added to provide further visual support of the Puss-N-Boba brand.
+A favicon was added to provide further visual support of the Happy Cake Friends brand.
 
 
 ## Future Features
@@ -185,19 +185,20 @@ A favicon was added to provide further visual support of the Puss-N-Boba brand.
   - Google Lighthouse - used to audit the performance and quality of the website
   - WC3 HTML Validator - used to validate the HTML code
   - WC3 CSS Validator - used to validate the CSS code https://jigsaw.w3.org/css-validator/
+  - JShint.com Javascript Validator - used to validate the Javascript code https://jshint.com/
 
   ### Deployment
   GitHub was used to deploy this website. The following steps were taken:
 
   1. Log into GitHub account.
-  2. Navigate to the project repository: puss-n-boba
+  2. Navigate to the project repository: Memory-game
   3. Click on the Settings button on the horizontal navigation across the top portion of the page.
   4. Navigate to the Pages link under the Code and automation section on the left navigation.
   5. Under GitHub Pages, go to Build and deployment. Then, under Source, select "Deploy from a branch". 
   6. Next, under Branch, select "main" and "/root" and then click on the Save button.
   7. After a few moments, the website will be made live and the link will be made visible at the top of the page. 
 
-  How to clone Puss-N-Boba & make changes:
+  How to clone the Happy Cake Friends Memory Game & make changes:
   1. Open the repository on GitHub.
   2. Navigate to the CODE link on the navigation across the top.
   3. Then, navigate to the green CODE button on the right side and click.
