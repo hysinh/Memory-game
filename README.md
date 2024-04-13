@@ -221,14 +221,26 @@ A favicon was added to provide further visual support of the Happy Cake Friends 
 
     ![screenshot of index page validation](docs/documentation/Screenshot_htmlvalidator.png)
     </details>
+
+    <details >
+    <summary>404 Page HTML Validation</summary>  
+
+    ![screenshot of index page validation](docs/documentation/Screenshot_htmlvalidator_404.png)
+    </details>
      
     
   - #### CSS Validation
     No errors were found when passing through the official W3C CSS Jigsaw validator
     <details >
-    <summary>CSS Validation</summary>  
+    <summary>Index Page CSS Validation</summary>  
 
     ![screenshot of css validation](docs/documentation/Screenshot_cssvalidator.png)
+    </details>
+
+    <details >
+    <summary>404 Page CSS Validation</summary>  
+
+    ![screenshot of css validation](docs/documentation/Screenshot_cssvalidator_404.png)
     </details>
 
   - #### Javascript Validation
