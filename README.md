@@ -19,6 +19,7 @@ The Happy Cake Friends Memory Game is a simple, fun online game for all ages.
   * [Card Grid](#card-grid)
   * [Play Button](#play-button)
   * [Player Tries Remaining](#player-tries-remaining)
+  * [Win Game and Lose Game Modals](#win-game-and-lose-game-modals)
   * [Footer](#footer)  
   * [Favicon](#favicon)  
 * [Future Features](#future-features)
@@ -51,13 +52,14 @@ Memory Gamezz ux stories
 ## Design
 
 - #### Site design 
-  For a simple, online game, the Happy Cake Friends has a colorful, illustrated look that appeals to those who enjoy a cute, illustrated aesthetic or are fans of the Happy Cake Friends characters or brand.
+  For a simple, online game, the Happy Cake Friends has a colorful, illustrated look that appeals to those who enjoy a cute, illustrated aesthetic or are fans of the Happy Cake Friends characters or brand. The site design for Happy Cake Friends Memory Game is responsive and the display adjusts responsively across devices.
 
   The Happy Cake Friends website needed to be responsive and available on a variety of screen sizes and devices to make it as accessible as possible. I focused on the following sizes:
 
   1. Mobile Device dimensions (small): 280px x 653px
   2. Mobile Device dimensions (larger): 375px and larger
   3. Tablet Device dimensions: 736px and larger
+  4. Laptop Device dimensions: 992px and larger
 
 - #### Wireframes
   The Happy Cake Friends website was designed by wireframes with pencil and paper. After sketching out what I planned, I started laying out the HTML and basic CSS for the site in a similar way that the Love Maths tutorial went. I made a list of the functions that I thought that the game would need and proceeded from there. In the end, I did not use different size cards for different levels or different numbers of lives for different levels on this version. I decided to keep it simple and stay with a single version. Difficulty levels can be implemented in a future version of the Happy Cake Friends Memory Game. I recreated the wireframes in a digital version, but an image of the original handdrawn wireframes is included below.
@@ -180,6 +182,8 @@ A favicon was added to provide further visual support of the Happy Cake Friends 
   - GitHub Codespaces - was used as the IDE to develop and test the code for this website
   - Git - provided the version control
   - Adobe Photoshop 2024 - used to create wireframes and edit all the images
+  - Wacom One: creative pen display and pen tablet
+  - Google Docs - used for notes and documentation
   - Google Fonts - imported fonts from this website
   - Google Developer Tools - used to debug website and test for responsiveness
   - Google Lighthouse - used to audit the performance and quality of the website
@@ -289,56 +293,48 @@ A favicon was added to provide further visual support of the Happy Cake Friends 
   #### The results of testing are as follows:
   | Page | Test | Pass/Fail |
   | ---- | ---- | --------- |
-  | All  | Puss-n-Boba logo links back to the homepage | Pass |
-  | All  | Underline appears on hover when moving over navigation bar links | Pass |
-  | All  | Underline appears on corresponding navigation link when on the page | Pass |
-  | All  | Navigation links direct user correctly to the correct page | Pass |
-  | All  | Footer social media icons open in a new tab and correctly bring user to the corresponding social media website | Pass |
-  | All  | Images and sections are responsive to different device sizes | Pass |
-  | Index  | Links on the homepage bring user to the correct page | Pass |
-  | Contact | Contact form correctly requires entries into fields | Pass |
-  | Contact | Contact form submission works corrrectly and brings user to a validation page | Pass |
-  | Contact | Google Maps is interactive and opens in a new tab when the user clicks on "view larger map" | Pass |
+  | Home  | Happy Tree Friends logo links back to the homepage | Pass |
+  | Home  | Images and sections are responsive to different device sizes | Pass |
+  | Home  | Play button works on click and sets the card grid correctly | Pass |
+  | Home  | If the user clicks on a card, it flips to display the card. The card cannot be clicked to flip it back. | Pass |
+  | Home  | If the user clicks on a second card, it flips to display the card. The two flipped cards are compared. If they match, the user is allowed to click on a new card. If they don't match, the cards will reset and the user can click on a new card (or one of the ones that didn't match). | Pass |
+  | Home  | If the user find all the matches, the matches are validated and user receives a Win message. | Pass |
+  | Home  | If the user exhausts their player tries before finding all the matches, the board is locked and the user receives a Lose message. | Pass |
+  | Home  | If the user receives a Lose or Win message, when they click on the screen, the modal closes and they can reset the game if they choose. | Pass |
+  | 404  | Link on the page bring user back to the home page | Pass |
 
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
   | Missing </h2> | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
   | Section element | Index page | HTML validator suggested changing section element to div to eliminate issues with lack of heading. I changed the section element to a div element. |
-  | Invalid 'align' property | style.css | Corrected invalid align property to text-align property  |
+  | Invalid 'align' property | style.css | Removed align property  |
   | Unnecessary ; tags | script.js | I had put ; at the end of every function that was unncessary. Resolved by removing them. |
   | Missing ; tags | Script.js | Missing ; at the end of console.log in js file in two places. Added the ; as necessary. |
-  | Accessibility | Index page | Document doesn't use legible font sizes at the mobile size  |
+  | Accessibility | Index page | Document doesn't use legible font sizes at the mobile size in the footer. The footer text size was adjusted to ensure better readability |
 
   ### Unfixed Bugs
-  - Document doesn't use legible font sizes at the mobile size - FIX
+  - At this time, because the cards all are added as elements to the DOM, it is possible to cheat by viewing the html source. You are able to see each image and it's names and it's location. I do not have enough programming knowledge at this time to avoid this.
   
 
 ## Credits
 ### Content
 - Content for website was writing by myself
-- Artwork was created by myself on Adope Photoshop
-- 
-- 
-- Correct syntax for implementation of how to fit Background Image to a Div using CSS: https://www.geeksforgeeks.org/how-to-fit-background-image-to-div-using-css/
+- Grid layout https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
+- Modal code https://codepen.io/dantewebmaster/pen/Yabpmr
 - W3C CSS Validator: https://jigsaw.w3.org/css-validator/
-- How to Center align a div element: https://www.w3schools.com/html/html_div.asp
-- HTML Block and Inline Elements: https://www.w3schools.com/html/html_blocks.asp
-- How to implement and syntax for CSS background-position Property: https://www.w3schools.com/cssref/pr_background-position.php
-- CSS Background Shorthand: https://www.w3schools.com/css/css_background_shorthand.asp
-- CSS Box Model: https://www.w3schools.com/css/css_boxmodel.asp
-- HTML Form Elements - Specifically text area properties: https://www.w3schools.com/html/html_form_elements.asp
-- CSS Forms: https://www.w3schools.com/css/css_form.asp | https://www.w3schools.com/tags/tag_textarea.asp
-- Tutorial on how to Style forms with CSS: https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/
-- How to center a div in a div vertically: https://blog.hubspot.com/website/center-div-css#:~:text=Set%20the%20top%20property%20to,(0%2C%20%2D50%25).
-- A Complete Guide to Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-- Guidance for CSS Background image - Shrink to fit fixed size div: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-- Guidance on how to implement and correct syntax for a background-color while also having a background image: https://stackoverflow.com/questions/8195215/css-background-image-on-background-color#:~:text=background%3A,position%20and%20background%2Drepeat%20properties.
-- Correct syntax for letter-spacing property: https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
-- How to make a cursor into a hand https://stackoverflow.com/questions/3087975/how-to-change-the-cursor-into-a-hand-when-a-user-hovers-over-a-list-item
-- Ideas on how to format README.MD document: https://github.com/amylour/scoops_pp1/
-- Naviation bar toggle menu code - Love running website tutorial - Code Institute
+- How to randomize the array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+- How to Make a Modal https://www.w3schools.com/howto/howto_css_modals.asp
+- How to use docstrings in Javascript https://stackoverflow.com/questions/34205666/utilizing-docstrings
+- Build Your Own Memory Card Game with HTML, CSS, and JavaScript - Beginner-Friendly Tutorial https://www.youtube.com/watch?v=xWdkt6KSirw
+- Awesome Vanilla JavaScript Memory Card Game Tutorial https://www.youtube.com/watch?v=-tlb4tv4mC4
+- How to toggle https://developer.mozilla.org/en-US/docs/Web/API/Element/classList & https://www.w3schools.com/howto/howto_js_toggle_class.asp
+- How to stack div elements vertically https://stackoverflow.com/questions/19284923/how-do-i-automatically-stack-divs-vertically-inside-a-parent
+- How to remove a class from an element https://www.w3schools.com/howto/howto_js_remove_class.asp
+- How to set multiple conditions in an if statement in JavaScript https://www.shecodes.io/athena/132703-how-to-set-multiple-conditions-in-an-if-statement-in-javascript#:~:text=In%20JavaScript%2C%20you%20can%20set
+
 
 
 ### Media
+- Artwork was created by myself on Adope Photoshop
 - The Happy Cake Friends characters were created by my daughter, Liloux Smith. They were redrawn in Adobe Photoshop for the purposes of this project.

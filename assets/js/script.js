@@ -5,8 +5,6 @@ const playerTriesCount = document.getElementById('score');
 let playerTries = 15;
 playerTriesCount.innerHTML = playerTries;
 
-
-
 /**
  * The Card Data set
  */
@@ -65,7 +63,6 @@ function generateCards() {
     const cardContainer = document.querySelector('#card-container');
     const fullDeck = duplicateData(cardData);
     const shuffledDeck = shuffleCards(fullDeck);
-    console.log(shuffledDeck);
     
     // Creates the HTML for cards
     for (let c of shuffledDeck) {
@@ -98,8 +95,6 @@ function generateCards() {
  * @param {*} event - the click event object
  */
 function flipCards(event) {
-    console.log(event);
-    console.log('i am flipping the card');
     let targetCard = event.target;
     targetCard.classList.add('toggleCard', 'active', 'no-click');
 
@@ -130,9 +125,6 @@ function checkCards(event) {
     // Checks to see if firstCard and secondCard match
     if (activeCards.length === 2) {
         if (firstCard.getAttribute('name') === secondCard.getAttribute('name')) {
-            console.log(firstCard.getAttribute('name'));
-            console.log(secondCard.getAttribute('name'));
-            console.log('match');
             firstCard.classList.remove('active');
             secondCard.classList.remove('active');
             firstCard.classList.add('matched');
@@ -141,7 +133,6 @@ function checkCards(event) {
             // checks to see if enough matches to win
             checkWin();
         } else {
-            console.log('wrong');
             updateTries();
             
             // timeout to allow for the player to see the card flip complete before it flips back
@@ -152,8 +143,6 @@ function checkCards(event) {
             // checks to see if game is lost
             checkLose();
         }
-
-        console.log(`the activeCards.length: ${activeCards.length}`);
     }
 
     return;
@@ -173,7 +162,6 @@ function unflipCards(event) {
         c.classList.remove('toggleCard');
         c.style.pointerEvents = 'all';
     }
-    console.log('i am unflipping the card');
 }
 
 /**
@@ -181,10 +169,8 @@ function unflipCards(event) {
  * Decrements player tries each time there is an unmatched set of cards.
  */
 function updateTries() {
-    console.log('inside updateTries function');
     playerTries--;
     setTimeout(() => playerTriesCount.innerText = playerTries, 1000);
-    console.log(`Player Tries left: ${playerTries}`);
 }
 
 /**
@@ -204,7 +190,6 @@ function lockBoard() {
 function checkWin() {
     const matchedCards = document.querySelectorAll('.matched');
     if (matchedCards.length === (cardData.length*2) ) {
-        console.log('You won! Play again?');
         
         // timeout allows for last card to complete flip before displaying message
         setTimeout(() => {
@@ -227,7 +212,6 @@ function checkLose() {
 
         // timeout allows for the last card to complete flip before displaying message
         setTimeout(() => {
-            console.log('You lost. New Game?');
             openLoseModal();
           }, 250);
     } else {
@@ -265,7 +249,6 @@ function closeModal() {
  * Removes all the card elements from the board
  */
 function clearBoard() {
-    console.log('clearing the Board');
     const deleteCards = document.querySelectorAll('.card');
     deleteCards.forEach(c => c.remove()); // code from jason smith
 }
@@ -274,7 +257,6 @@ function clearBoard() {
  * Starts the game by populating the grid with new shuffled cards
  */
 function startGame() {
-    console.log('starting the game');
     clearBoard();
     generateCards();
     playerTries = 15;
