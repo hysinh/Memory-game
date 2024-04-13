@@ -26,6 +26,11 @@ header {
     text-align: center;
 }
 
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
 h1{
     font-family: "Londrina Solid", sans-serif;
     font-size: 2.5rem;
@@ -42,12 +47,12 @@ p {
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
+    margin: 1rem 0;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
     cursor: pointer;
+    color: yellow;
 }
 
 #main-container {
@@ -169,15 +174,14 @@ a {
 #lost {
     width: 80%;
     text-align: center;
-    /*padding: 4rem 0;*/
+    padding: 10px;
     margin: 25px;
-    
-
+    background-color: #247481;
 }
 
 /* Footer */
 footer {
-    padding: 2rem 0;
+    padding: 2rem 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -228,6 +232,11 @@ footer p {
         width: 60%; 
     }
 
+    /* 404 Page */
+    #lost {
+        width: 50%;
+    }
+
     /* Footer */
     footer p {
         font-size: 1em;
@@ -247,5 +256,10 @@ footer p {
     /* Modal Content/Box */
     .modal-content {
         width: 40%; /* Could be more or less, depending on screen size */
+    }
+
+    /* 404 Page */
+    #lost {
+        width: 40%;
     }
 }
