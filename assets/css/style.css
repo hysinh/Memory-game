@@ -103,6 +103,7 @@ a {
     pointer-events: none;
 }
 
+/* Play Game button */
 .button-container {
     display: flex;
     flex-direction: row;
