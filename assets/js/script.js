@@ -92,6 +92,9 @@ function generateCards() {
 
 /**
  * Handles the click event on a card. If two cards are activated, check to see if the cards match.
+ * The 'active' style class indicates if a card if active and displays the card.
+ * The 'toggleCard" style allows to card to flip between the display of the two elements - the back and front.
+ * The 'no-click' style class removes the pointer attribute and prevents the card from responding to a click event.
  * @param {*} event - the click event object
  */
 function flipCards(event) {
@@ -151,7 +154,6 @@ function checkCards(event) {
  * Removes the active card attributes and allows the card to be clicked again.
  * @param {*} event of two cards not matching
  */
-// Unflips the cards if they don't match
 function unflipCards(event) {
     const flippedCards = document.querySelectorAll('.active');
     for (let c of flippedCards) {
