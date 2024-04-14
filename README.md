@@ -161,9 +161,17 @@ The footer section features a simple copyright message for the Happy Cake Friend
 <details >
 <summary></summary>  
 
-![screenshot favicon](docs/documentation/screenshot_features_favicon.png)
+![screenshot favicon](docs/documentation/Screenshot_favicon.png)
 </details>  
 A favicon was added to provide further visual support of the Happy Cake Friends brand.
+
+### 404 Page Not Found page
+<details >
+<summary></summary>  
+
+![screenshot favicon](docs/documentation/Screenshot_features_404page.png)
+</details>  
+In the event that the user navigates to non-existing page, a 404 page displays a Page not Found message and directs the user back to the main game page.
 
 
 ## Future Features
@@ -301,6 +309,7 @@ A favicon was added to provide further visual support of the Happy Cake Friends 
   | Home  | If the user find all the matches, the matches are validated and user receives a Win message. | Pass |
   | Home  | If the user exhausts their player tries before finding all the matches, the board is locked and the user receives a Lose message. | Pass |
   | Home  | If the user receives a Lose or Win message, when they click on the screen, the modal closes and they can reset the game if they choose. | Pass |
+  | 404  | Page displays when user attempts to go to a non-existing page | Pass |
   | 404  | Link on the page bring user back to the home page | Pass |
 
   #### Bugs and Fixes
