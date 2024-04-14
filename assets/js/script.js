@@ -1,7 +1,7 @@
 /**
  * Sets some global variables by getting elements from the DOM
  */
-const playerTriesCount = document.getElementById('score');
+const playerTriesCount = document.getElementById("score");
 let playerTries = 15;
 playerTriesCount.innerHTML = playerTries;
 
@@ -9,14 +9,14 @@ playerTriesCount.innerHTML = playerTries;
  * The Card Data set
  */
 let cardData = [
-    { imgSrc: "assets/images/card_happyvalley_egg.webp", name: "egg" }, 
-    { imgSrc: "assets/images/card_happyvalley_grumpy.webp", name: "grumpy" },
-    { imgSrc: "assets/images/card_happyvalley_leafy.webp", name: "leafy" },
-    { imgSrc: "assets/images/card_happyvalley_pete.webp", name: "pete" },
-    { imgSrc: "assets/images/card_happyvalley_pisa.webp", name: "pisa" },
-    { imgSrc: "assets/images/card_happyvalley_poppy.webp", name: "poppy" },
-    { imgSrc: "assets/images/card_happyvalley_smiley.webp", name: "smiley" },
-    { imgSrc: "assets/images/card_happyvalley_walter.webp", name: "walter" },
+  { imgSrc: "assets/images/card_happyvalley_egg.webp", name: "egg" },
+  { imgSrc: "assets/images/card_happyvalley_grumpy.webp", name: "grumpy" },
+  { imgSrc: "assets/images/card_happyvalley_leafy.webp", name: "leafy" },
+  { imgSrc: "assets/images/card_happyvalley_pete.webp", name: "pete" },
+  { imgSrc: "assets/images/card_happyvalley_pisa.webp", name: "pisa" },
+  { imgSrc: "assets/images/card_happyvalley_poppy.webp", name: "poppy" },
+  { imgSrc: "assets/images/card_happyvalley_smiley.webp", name: "smiley" },
+  { imgSrc: "assets/images/card_happyvalley_walter.webp", name: "walter" },
 ];
 
 /**
@@ -24,8 +24,8 @@ let cardData = [
  * @param {array} array of card data
  */
 function duplicateData() {
-    let newData = cardData.concat(cardData);
-    return newData;
+  let newData = cardData.concat(cardData);
+  return newData;
 }
 
 /**
@@ -35,21 +35,22 @@ function duplicateData() {
  * @returns {array} Returns randomized array
  */
 function shuffleCards(array) {
-    let currentIndex = array.length;
-     
-    // While there remain elements to shuffleassets.
-    while (currentIndex != 0) {
-      
-        // Pick a remaining element...
-        let randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-      
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
+  let currentIndex = array.length;
 
-    return array; // return the array
+  // While there remain elements to shuffleassets.
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array; // return the array
 }
 
 /**
@@ -60,34 +61,34 @@ function shuffleCards(array) {
  * Adds event listeners to the card div element.
  */
 function generateCards() {
-    const cardContainer = document.querySelector('#card-container');
-    const fullDeck = duplicateData(cardData);
-    const shuffledDeck = shuffleCards(fullDeck);
-    
-    // Creates the HTML for cards
-    for (let c of shuffledDeck) {
-        const card = document.createElement('div');
-        const front = document.createElement('img');
-        const back = document.createElement('div');
-        const url = c.imgSrc;
-        
-        // Sets the classes of the cards
-        card.setAttribute('class', 'card');
-        front.setAttribute('class', 'front');
-        back.setAttribute('class', 'back');
+  const cardContainer = document.querySelector("#card-container");
+  const fullDeck = duplicateData(cardData);
+  const shuffledDeck = shuffleCards(fullDeck);
 
-        // Puts information onto the cards
-        front.src = url;
-        card.setAttribute('name', c.name);
+  // Creates the HTML for cards
+  for (let c of shuffledDeck) {
+    const card = document.createElement("div");
+    const front = document.createElement("img");
+    const back = document.createElement("div");
+    const url = c.imgSrc;
 
-        // Inserts the cards into the DOM
-        cardContainer.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-        
-        // Adds event listeners
-        card.addEventListener('click', flipCards);
-    }
+    // Sets the classes of the cards
+    card.setAttribute("class", "card");
+    front.setAttribute("class", "front");
+    back.setAttribute("class", "back");
+
+    // Puts information onto the cards
+    front.src = url;
+    card.setAttribute("name", c.name);
+
+    // Inserts the cards into the DOM
+    cardContainer.appendChild(card);
+    card.appendChild(front);
+    card.appendChild(back);
+
+    // Adds event listeners
+    card.addEventListener("click", flipCards);
+  }
 }
 
 /**
@@ -98,16 +99,16 @@ function generateCards() {
  * @param {*} event - the click event object
  */
 function flipCards(event) {
-    let targetCard = event.target;
-    targetCard.classList.add('toggleCard', 'active', 'no-click');
+  let targetCard = event.target;
+  targetCard.classList.add("toggleCard", "active", "no-click");
 
-    const activeCards = document.querySelectorAll('.active');
-    
-    if (activeCards.length === 2) {
-        checkCards(event);
-    } else {
-        return;
-    }
+  const activeCards = document.querySelectorAll(".active");
+
+  if (activeCards.length === 2) {
+    checkCards(event);
+  } else {
+    return;
+  }
 }
 
 /**
@@ -117,36 +118,36 @@ function flipCards(event) {
  * @param {*} event - two cards activated
  */
 function checkCards(event) {
-    let firstCard, secondCard;
-    const activeCards = document.querySelectorAll('.active');
+  let firstCard, secondCard;
+  const activeCards = document.querySelectorAll(".active");
 
-    firstCard = activeCards[0];
-    secondCard = activeCards[1];
+  firstCard = activeCards[0];
+  secondCard = activeCards[1];
 
-    // Checks to see if firstCard and secondCard match
-    if (activeCards.length === 2) {
-        if (firstCard.getAttribute('name') === secondCard.getAttribute('name')) {
-            firstCard.classList.remove('active');
-            secondCard.classList.remove('active');
-            firstCard.classList.add('matched');
-            secondCard.classList.add('matched');
+  // Checks to see if firstCard and secondCard match
+  if (activeCards.length === 2) {
+    if (firstCard.getAttribute("name") === secondCard.getAttribute("name")) {
+      firstCard.classList.remove("active");
+      secondCard.classList.remove("active");
+      firstCard.classList.add("matched");
+      secondCard.classList.add("matched");
 
-            // checks to see if enough matches to win
-            checkWin();
-        } else {
-            updateTries();
-            
-            // timeout to allow for the player to see the card flip complete before it flips back
-            setTimeout(() => {
-                unflipCards();
-              }, 500);
+      // checks to see if enough matches to win
+      checkWin();
+    } else {
+      updateTries();
 
-            // checks to see if game is lost
-            checkLose();
-        }
+      // timeout to allow for the player to see the card flip complete before it flips back
+      setTimeout(() => {
+        unflipCards();
+      }, 500);
+
+      // checks to see if game is lost
+      checkLose();
     }
+  }
 
-    return;
+  return;
 }
 
 /**
@@ -155,13 +156,13 @@ function checkCards(event) {
  * @param {*} event of two cards not matching
  */
 function unflipCards(event) {
-    const flippedCards = document.querySelectorAll('.active');
-    for (let c of flippedCards) {
-        c.classList.remove('active');
-        c.classList.remove('no-click');
-        c.classList.remove('toggleCard');
-        c.style.pointerEvents = 'all';
-    }
+  const flippedCards = document.querySelectorAll(".active");
+  for (let c of flippedCards) {
+    c.classList.remove("active");
+    c.classList.remove("no-click");
+    c.classList.remove("toggleCard");
+    c.style.pointerEvents = "all";
+  }
 }
 
 /**
@@ -169,36 +170,36 @@ function unflipCards(event) {
  * Decrements player tries each time there is an unmatched set of cards.
  */
 function updateTries() {
-    playerTries--;
-    setTimeout(() => playerTriesCount.innerText = playerTries, 1000);
+  playerTries--;
+  setTimeout(() => (playerTriesCount.innerText = playerTries), 1000);
 }
 
 /**
  * Locks the board when player attempts have reached been exhausted.
  */
 function lockBoard() {
-    const cards = document.querySelectorAll('.card');
-    for (let card of cards) {
-        card.removeEventListener('click', flipCards);
-        card.style.pointerEvents = 'none';
-    }
+  const cards = document.querySelectorAll(".card");
+  for (let card of cards) {
+    card.removeEventListener("click", flipCards);
+    card.style.pointerEvents = "none";
+  }
 }
 
 /**
  * Checks if there is sufficient matched cards to win the game.
  */
 function checkWin() {
-    const matchedCards = document.querySelectorAll('.matched');
-    if (matchedCards.length === (cardData.length*2) ) {
-        lockBoard();
-        // timeout allows for last card to complete flip before displaying message
-        setTimeout(() => {
-            openWinModal();
-            //restart();
-          }, 250);
-    } else {
-        return;
-    }
+  const matchedCards = document.querySelectorAll(".matched");
+  if (matchedCards.length === cardData.length * 2) {
+    lockBoard();
+    // timeout allows for last card to complete flip before displaying message
+    setTimeout(() => {
+      openWinModal();
+      //restart();
+    }, 250);
+  } else {
+    return;
+  }
 }
 
 /**
@@ -206,72 +207,70 @@ function checkWin() {
  */
 // checks to see if you lost
 function checkLose() {
-    
-    if (playerTries === 0) {
-        lockBoard();
+  if (playerTries === 0) {
+    lockBoard();
 
-        // timeout allows for the last card to complete flip before displaying message
-        setTimeout(() => {
-            openLoseModal();
-          }, 250);
-    } else {
-        return;
-    }
+    // timeout allows for the last card to complete flip before displaying message
+    setTimeout(() => {
+      openLoseModal();
+    }, 250);
+  } else {
+    return;
+  }
 }
 
 /**
  * Displays Lose message modal
  */
 function openLoseModal() {
-    var modal = document.getElementById('loseModal');
-    modal.style.display = 'block';
+  var modal = document.getElementById("loseModal");
+  modal.style.display = "block";
 }
 
 /**
  * Displays Win message modal
  */
 function openWinModal() {
-    var modal = document.getElementById('winModal');
-    modal.style.display = 'block';
+  var modal = document.getElementById("winModal");
+  modal.style.display = "block";
 }
 
 /**
  * Closes the modal message boxes upon any click on the screen
  */
 function closeModal() {
-    var loseModal = document.getElementById(`loseModal`);
-    var winModal = document.getElementById('winModal');
-    loseModal.style.display = 'none';
-    winModal.style.display = 'none';
+  var loseModal = document.getElementById(`loseModal`);
+  var winModal = document.getElementById("winModal");
+  loseModal.style.display = "none";
+  winModal.style.display = "none";
 }
 
 /**
  * Removes all the card elements from the board
  */
 function clearBoard() {
-    const deleteCards = document.querySelectorAll('.card');
-    deleteCards.forEach(c => c.remove()); // code from jason smith
+  const deleteCards = document.querySelectorAll(".card");
+  deleteCards.forEach((c) => c.remove()); // code from jason smith
 }
 
 /**
  * Starts the game by populating the grid with new shuffled cards
  */
 function startGame() {
-    clearBoard();
-    generateCards();
-    playerTries = 15;
-    playerTriesCount.textContent = playerTries;
+  clearBoard();
+  generateCards();
+  playerTries = 15;
+  playerTriesCount.textContent = playerTries;
 }
 
 /**
  * Event Listeners - adds to DOM elements when DOM finishes loading before running game.
  */
 // Wait for the DOM to finish loading before running the game
-document.addEventListener("DOMContentLoaded", function() {
-    let playGameButton = document.getElementById('play-game-button');
-    playGameButton.addEventListener('click', startGame);
+document.addEventListener("DOMContentLoaded", function () {
+  let playGameButton = document.getElementById("play-game-button");
+  playGameButton.addEventListener("click", startGame);
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.addEventListener("click", closeModal);
-
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", closeModal);
 });
