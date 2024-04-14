@@ -333,6 +333,7 @@ In the event that the user navigates to non-existing page, a 404 page displays a
 ## Credits
 ### Content
 - Content for website was writing by myself
+- Jason Holt Smith, https://github.com/bicarbon8, was available for copious amounts of assistance debugging and helping to steer me in the correct direction for writing the code.
 - Grid layout https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
 - Modal code https://codepen.io/dantewebmaster/pen/Yabpmr
 - W3C CSS Validator: https://jigsaw.w3.org/css-validator/
