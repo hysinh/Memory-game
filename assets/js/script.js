@@ -205,7 +205,6 @@ function checkWin() {
 /**
  * Checks to see if player has lost by exhausting the number of tries
  */
-// checks to see if you lost
 function checkLose() {
   if (playerTries === 0) {
     lockBoard();
@@ -266,7 +265,6 @@ function startGame() {
 /**
  * Event Listeners - adds to DOM elements when DOM finishes loading before running game.
  */
-// Wait for the DOM to finish loading before running the game
 document.addEventListener("DOMContentLoaded", function () {
   let playGameButton = document.getElementById("play-game-button");
   playGameButton.addEventListener("click", startGame);
