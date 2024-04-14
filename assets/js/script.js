@@ -101,7 +101,6 @@ function flipCards(event) {
     const activeCards = document.querySelectorAll('.active');
     
     if (activeCards.length === 2) {
-        console.log(`Inside flipcards activeCards.length: ${activeCards.length}`);
         checkCards(event);
     } else {
         return;
@@ -117,7 +116,6 @@ function flipCards(event) {
 function checkCards(event) {
     let firstCard, secondCard;
     const activeCards = document.querySelectorAll('.active');
-    console.log(`Inside check cards - activeCards.length: ${activeCards.length}`);
 
     firstCard = activeCards[0];
     secondCard = activeCards[1];
