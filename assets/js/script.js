@@ -2,7 +2,7 @@
  * Sets some global variables by getting elements from the DOM
  */
 const playerTriesCount = document.getElementById("score");
-const maxTries = 15
+const maxTries = 15;
 let playerTries = maxTries;
 playerTriesCount.innerHTML = playerTries;
 
