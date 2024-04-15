@@ -30,6 +30,7 @@ The Happy Cake Friends Memory Game is a simple, fun online game for all ages.
 * [Testing](#testing)
   * [HTML Validation](#html-validation)
   * [CSS Validationn](#css-validation)
+  * [Javascript Validationn](#javascript-validation)
   * [Lighthouse Performance Audits via Chrome Dev Tools](#lighthouse-performace-audit-via-chrome-dev-tools)
   * [Manual Testing](#manual-testing)
   * [Bugs and Fixes](#bugs-and-fixes)
