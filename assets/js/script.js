@@ -23,6 +23,7 @@ let cardData = [
 /**
  * Duplicates the card data array
  * @param {array} array of card data
+ * @returns an array with a duplicate set of data added to the original array
  */
 function duplicateData() {
   let newData = cardData.concat(cardData);
@@ -33,7 +34,7 @@ function duplicateData() {
  * Randomizes the array: The de-facto unbiased shuffle algorithm is the Fisher–Yates (aka Knuth) Shuffle
  * Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
  * @param {*} array of card data
- * @returns {array} Returns randomized array
+ * @returns {cards} Returns randomized array of the card data
  */
 function shuffleCards(array) {
   let currentIndex = array.length;
@@ -56,9 +57,9 @@ function shuffleCards(array) {
 
 /**
  * Generates the card elements and adds them to the DOM.
- * Pulls the initial data from the cardData and applies the
- * duplicateData() and then shuffleDeck() to create a unique deck each time
- * before populating the grid.
+ * Pulls the initial data from the cardData, duplicates the data to
+ * create a deck of cards. Then, shuffles the deck of cards to create
+ * a unique deck each time before populating the grid.
  * Adds event listeners to the card div element.
  */
 function generateCards() {
@@ -97,7 +98,7 @@ function generateCards() {
  * The 'active' style class indicates if a card if active and displays the card.
  * The 'toggleCard" style allows to card to flip between the display of the two elements - the back and front.
  * The 'no-click' style class removes the pointer attribute and prevents the card from responding to a click event.
- * @param {*} event - the click event object
+ * @param {event} - the click event object
  */
 function flipCards(event) {
   let targetCard = event.target;
@@ -116,7 +117,7 @@ function flipCards(event) {
  * Checks two activated cards to see if they match based on name attribute.
  * If cards match, a match attribute is added and the active attribute is removed.
  * if cards don't match, the tries left are updated and the cards are flipped back.
- * @param {*} event - two cards activated
+ * @param {event} - two cards activated
  */
 function checkCards(event) {
   let firstCard, secondCard;
@@ -182,7 +183,6 @@ function lockBoard() {
   const cards = document.querySelectorAll(".card");
   for (let card of cards) {
     card.removeEventListener("click", flipCards);
-    card.style.pointerEvents = "none";
   }
 }
 
@@ -260,6 +260,8 @@ function startGame() {
   generateCards();
   playerTries = maxTries;
   playerTriesCount.textContent = playerTries;
+  let playButton = document.getElementById("play-game-button");
+  playButton.innerText = "play / reset";
 }
 
 /**
