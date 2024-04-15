@@ -52,7 +52,7 @@ function shuffleCards(array) {
     ];
   }
 
-  return array; // return the array
+  return array; 
 }
 
 /**
