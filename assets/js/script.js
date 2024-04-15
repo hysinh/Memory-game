@@ -2,7 +2,8 @@
  * Sets some global variables by getting elements from the DOM
  */
 const playerTriesCount = document.getElementById("score");
-let playerTries = 15;
+const maxTries = 15
+let playerTries = maxTries;
 playerTriesCount.innerHTML = playerTries;
 
 /**
@@ -195,7 +196,6 @@ function checkWin() {
     // timeout allows for last card to complete flip before displaying message
     setTimeout(() => {
       openWinModal();
-      //restart();
     }, 250);
   } else {
     return;
@@ -258,7 +258,7 @@ function clearBoard() {
 function startGame() {
   clearBoard();
   generateCards();
-  playerTries = 15;
+  playerTries = maxTries;
   playerTriesCount.textContent = playerTries;
 }
 
