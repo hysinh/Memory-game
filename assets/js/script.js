@@ -60,7 +60,7 @@ function shuffleCards(array) {
  * Pulls the initial data from the cardData, duplicates the data to
  * create a deck of cards. Then, shuffles the deck of cards to create
  * a unique deck each time before populating the grid.
- * Adds event listeners to the card div element.
+ * Adds event listeners to the card element.
  */
 function generateCards() {
   const cardContainer = document.querySelector("#card-container");
