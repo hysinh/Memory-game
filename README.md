@@ -272,6 +272,12 @@ In the event that the user navigates to non-existing page, a 404 page displays a
 
     ![screenshot of index page lighthouse audit](docs/documentation/Screenshot_lighthouse_desktop.png)
     </details>
+
+    <details >
+    <summary>404 Page Lighthouse audit</summary>  
+
+    ![screenshot of 404 page lighthouse audit](docs/documentation/Screenshot_lighthouse_desktop_404.png)
+    </details>
     
     <br>
 
@@ -280,6 +286,12 @@ In the event that the user navigates to non-existing page, a 404 page displays a
     <summary>Index Page Lighthouse audit</summary>  
 
     ![screenshot of index page lighthouse audit](docs/documentation/Screenshot_lighthouse_mobile.png)
+    </details>
+
+    <details >
+    <summary>404 Page Lighthouse audit</summary>  
+
+    ![screenshot of 404 page lighthouse audit](docs/documentation/Screenshot_lighthouse_mobile_404.png)
     </details>
 
   ### Manual Testing
