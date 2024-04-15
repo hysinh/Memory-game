@@ -187,7 +187,7 @@ function lockBoard() {
 }
 
 /**
- * Checks if there is sufficient matched cards to win the game.
+ * Checks if all the cards are matched to win the game.
  */
 function checkWin() {
   const matchedCards = document.querySelectorAll(".matched");
