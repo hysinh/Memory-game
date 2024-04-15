@@ -235,7 +235,7 @@ function openWinModal() {
 }
 
 /**
- * Closes the modal message boxes upon any click on the screen
+ * Closes the modal message box
  */
 function closeModal() {
   var loseModal = document.getElementById(`loseModal`);
