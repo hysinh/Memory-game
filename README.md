@@ -204,7 +204,7 @@ In the event that the user navigates to non-existing page, a 404 page displays a
   GitHub was used to deploy this website. The following steps were taken:
 
   1. Log into GitHub account.
-  2. Navigate to the project repository: Memory-game
+  2. Navigate to the project repository: [Memory-game](https://github.com/hysinh/Memory-game?)
   3. Click on the Settings button on the horizontal navigation across the top portion of the page.
   4. Navigate to the Pages link under the Code and automation section on the left navigation.
   5. Under GitHub Pages, go to Build and deployment. Then, under Source, select "Deploy from a branch". 
@@ -212,13 +212,13 @@ In the event that the user navigates to non-existing page, a 404 page displays a
   7. After a few moments, the website will be made live and the link will be made visible at the top of the page. 
 
   How to clone the Happy Cake Friends Memory Game & make changes:
-  1. Open the repository on GitHub.
+  1. Open the [Memory-game repository](https://github.com/hysinh/Memory-game?) on GitHub.
   2. Navigate to the CODE link on the navigation across the top.
   3. Then, navigate to the green CODE button on the right side and click.
   4. Select the Local tab and click on the copy icon to make a copy of the repository.
   5. Then navigate back to your main GitHub dashboard and then create a new repository with your desired name.
   6. On the next page, navigate to the bottom of the page and select Import code under "Import code from another repository".
-  7. In the next window, paste the copied link of the Puss-N-Boba repository into the line.
+  7. In the next window, paste the copied link of the [Memory-game repository](https://github.com/hysinh/Memory-game?) into the line.
   8. Then, click Begin Import to import the repository code.
   9. Make changes and/or deploy as desired.
 
@@ -331,7 +331,7 @@ In the event that the user navigates to non-existing page, a 404 page displays a
   | Can still click on cards after lose game | Index page | Added a lockBoard function in JS file to resolve. |
   | Can still click on a third card when two first cards are being compared | Index page | Change < 2 in checkCards function to === 2 to prevent a third card from being flipped | 
   | When the user completes a game but lost, user can click several times on a card and it will eventually flip over | Index page | Added a lockBoard function to the checkLose function in JS file to resolve. |
-  | Missing </h2> | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
+  | Missing h2 close tag | Index page | Had changed an H1 tag to a H2 tag but did not update the close tag. Resolved by updating close tag. |
   | Section element | Index page | HTML validator suggested changing section element to div to eliminate issues with lack of heading. I changed the section element to a div element. |
   | Accessibility | Index page | Document doesn't use legible font sizes at the mobile size in the footer. The footer text size was adjusted to ensure better readability |
   | Invalid 'align' property | style.css | Removed align property  |
